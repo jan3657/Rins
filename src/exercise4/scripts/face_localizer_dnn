@@ -21,6 +21,7 @@ from cv_bridge import CvBridge, CvBridgeError
 from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
 
+dict = {}
 
 class face_localizer:
     def __init__(self):
@@ -183,23 +184,40 @@ class face_localizer:
 
                 if pose is not None:
 
-                    # Create a marker used for visualization
-                    self.marker_num += 1
-                    marker = Marker()
-                    marker.header.stamp = rospy.Time(0)
-                    marker.header.frame_id = 'map'
-                    marker.pose = pose
-                    marker.type = Marker.CUBE
-                    marker.action = Marker.ADD
-                    marker.frame_locked = False
-                    marker.lifetime = rospy.Duration.from_sec(10)
-                    marker.id = self.marker_num
-                    marker.scale = Vector3(0.1, 0.1, 0.1)
-                    marker.color = ColorRGBA(0, 1, 0, 1)
-                    self.marker_array.markers.append(marker)
+                    if not dict:
+                        self.place_marker(pose)
+                        
+                    else:
 
-                    self.markers_pub.publish(self.marker_array)
+                        is_close = False
 
+                        for item in dict:
+
+                            if not(abs(pose.position.x - dict[item][0]) > 1 or abs(pose.position.y - dict[item][1]) > 1):
+                                is_close = True
+
+                        if not is_close:
+                            self.place_marker(pose)
+
+    def place_marker(self, pose):
+        
+        self.marker_num += 1
+        dict[self.marker_num] = (pose.position.x, pose.position.y)
+        marker = Marker()
+        marker.header.stamp = rospy.Time(0)
+        marker.header.frame_id = 'map'
+        marker.pose = pose
+        marker.type = Marker.CUBE
+        marker.action = Marker.ADD
+        marker.frame_locked = False
+        #marker.lifetime = rospy.Duration.from_sec(10)
+        marker.id = self.marker_num
+        marker.scale = Vector3(0.1, 0.1, 0.1)
+        marker.color = ColorRGBA(0, 1, 0, 1)
+        self.marker_array.markers.append(marker)
+        self.markers_pub.publish(self.marker_array)
+        print(len(self.marker_array.markers))
+    
     def depth_callback(self,data):
 
         try:
@@ -252,13 +270,23 @@ class face_localizer:
 
 
     def mover(self):
-        pointsX = [-0.6393817067146301,-1.2022159099578857,-0.1617065668106079,-0.06641178578138351,2.8884198665618896,1.2774776220321655,-0.47786661982536316]
-        pointsY = [1.8630597591400146,0.4219764769077301,0.3451138436794281,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.689185857772827]
+        pointsX = [-1.0010287761688232,-1.2022159099578857,-0.1617065668106079,-0.06641178578138351,2.8884198665618896,1.2774776220321655,-0.47786661982536316]
+        pointsY = [1.98361825942993166,0.4219764769077301,0.3451138436794281,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.689185857772827]
+        
+        # , 0.9174761772155762
+        # , 2.71067476272583
+        
         i = 0
+        numb_of_faces = 5
         rate = rospy.Rate(1)
 
         while not rospy.is_shutdown():
-            if(self.state == "get_next_waypoint" and i < len(pointsX)-1):
+            #if(self.state == "get_next_waypoint" and i < len(pointsX)-1):
+            if(self.state == "get_next_waypoint" and len(self.marker_array.markers) != numb_of_faces):
+            
+                if i == len(pointsX):
+                    i = 0
+                
                 print(pointsX[i], " ", pointsY[i])
                 self.move_to_next_waypoint(pointsX[i],pointsY[i])
                 i += 1
