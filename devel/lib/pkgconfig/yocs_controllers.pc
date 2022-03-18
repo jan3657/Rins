@@ -1,0 +1,8 @@
+prefix=/home/jan/ROS/devel
+
+Name: yocs_controllers
+Description: Description of yocs_controllers
+Version: 0.12.1
+Cflags: -I/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/include
+Libs: -L${prefix}/lib 
+Requires: roscpp
