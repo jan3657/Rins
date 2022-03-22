@@ -8,7 +8,8 @@ import actionlib
 import numpy as np
 import tf2_geometry_msgs
 import tf2_ros
-
+import face_recognition
+import copy
 
 from os.path import dirname, join
 
@@ -21,7 +22,6 @@ from cv_bridge import CvBridge, CvBridgeError
 from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
 
-dict = {}
 
 class face_localizer:
     def __init__(self):
@@ -54,15 +54,14 @@ class face_localizer:
         # self.image_sub = rospy.Subscriber("/camera/rgb/image_raw", Image, self.image_callback)
         # self.depth_sub = rospy.Subscriber("/camera/depth/image_raw", Image, self.depth_callback)
 
-        # Publiser for the visualization markers
-        self.markers_pub = rospy.Publisher('face_markers', MarkerArray, queue_size=1000)
-
-        # Publiser for the visualization markers
+        # Publisher for the visualization markers
         self.markers_pub = rospy.Publisher('face_markers', MarkerArray, queue_size=1000)
 
         # Object we use for transforming between coordinate frames
         self.tf_buf = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
+        
+        self.faces = list()
 
 
     def get_pose(self,coords,dist,stamp):
@@ -181,42 +180,42 @@ class face_localizer:
 
                 # Find the location of the detected face
                 pose = self.get_pose((x1,x2,y1,y2), face_distance, depth_time)
+                print(pose)
 
                 if pose is not None:
 
-                    if not dict:
-                        self.place_marker(pose)
-                        
+                    face_encoding = face_recognition.face_encodings(face_region)
+                    
+                    if len(face_encoding) == 0:
+                        continue
                     else:
-
-                        is_close = False
-
-                        for item in dict:
-
-                            if not(abs(pose.position.x - dict[item][0]) > 1 or abs(pose.position.y - dict[item][1]) > 1):
-                                is_close = True
-
-                        if not is_close:
-                            self.place_marker(pose)
-
-    def place_marker(self, pose):
+                        face_encoding = face_encoding[0]
+                    
+                    place_marker = True
+                    
+                    for face in self.faces:
+                        
+                        if not(abs(pose.position.x - face.pose.position.x) > 1 or abs(pose.position.y - face.pose.position.y) > 1):
+                        # faces are close, check if they are the same
+                            if face_recognition.compare_faces([face.enc], face_encoding)[0]:
+                                place_marker = False
+                                
+                    if place_marker:
+                    
+                        self.marker_num += 1
+                        face = Face(pose, face_encoding, self.marker_num)
+                        self.faces.append(face)
+                        #self.faces.append(Face(pose, face_encoding, self.marker_num))
+                        self.marker_array.markers.append(face.to_marker())
         
-        self.marker_num += 1
-        dict[self.marker_num] = (pose.position.x, pose.position.y)
-        marker = Marker()
-        marker.header.stamp = rospy.Time(0)
-        marker.header.frame_id = 'map'
-        marker.pose = pose
-        marker.type = Marker.CUBE
-        marker.action = Marker.ADD
-        marker.frame_locked = False
-        #marker.lifetime = rospy.Duration.from_sec(10)
-        marker.id = self.marker_num
-        marker.scale = Vector3(0.1, 0.1, 0.1)
-        marker.color = ColorRGBA(0, 1, 0, 1)
-        self.marker_array.markers.append(marker)
-        self.markers_pub.publish(self.marker_array)
-        print(len(self.marker_array.markers))
+        
+        #self.marker_array.markers = list()
+        
+        #for face in self.faces:
+        #    self.marker_array.markers.append(face.to_marker())
+            
+        self.markers_pub.publish(self.marker_array)            
+
     
     def depth_callback(self,data):
 
@@ -237,6 +236,7 @@ class face_localizer:
 
         #plt.imshow(depth_image)
         #plt.show()
+
 
     def result_sub_callback(self, data):
         res_status = data.status.status
@@ -259,30 +259,22 @@ class face_localizer:
         print("Moving")
 
         client.send_goal(goal)
-        #wait = client.wait_for_result()
-
-        #if not wait:
-        #    rospy.logerr("Action server not available!")
-        #    rospy.signal_shutdown("Action server not available!")
-        #else:
-        #    return client.get_result()
-
 
 
     def mover(self):
-        pointsX = [-1.0010287761688232,-1.2022159099578857,-0.1617065668106079,-0.06641178578138351,2.8884198665618896,1.2774776220321655,-0.47786661982536316]
-        pointsY = [1.98361825942993166,0.4219764769077301,0.3451138436794281,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.689185857772827]
+        pointsX = [-1.0010287761688232,-1.2022159099578857,-0.1617065668106079,1.1553516387939453,-0.06641178578138351,2.8884198665618896,1.2774776220321655,-0.47786661982536316]
+        pointsY = [1.98361825942993166,0.4219764769077301,0.3451138436794281,-1.0127415657043457,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.689185857772827]
         
         # , 0.9174761772155762
         # , 2.71067476272583
         
         i = 0
-        numb_of_faces = 5
+        numb_of_faces = 3
         rate = rospy.Rate(1)
 
         while not rospy.is_shutdown():
             #if(self.state == "get_next_waypoint" and i < len(pointsX)-1):
-            if(self.state == "get_next_waypoint" and len(self.marker_array.markers) != numb_of_faces):
+            if(self.state == "get_next_waypoint" and len(self.faces) != numb_of_faces):
             
                 if i == len(pointsX):
                     i = 0
@@ -297,12 +289,36 @@ class face_localizer:
         cv2.destroyAllWindows()
 
 
+class Face:
+
+    def __init__(self, pose, enc, mId):
+        self.pose = pose
+        self.enc = copy.deepcopy(enc)
+        self.id = mId
+
+    def to_marker(self):
+        marker = Marker()
+        marker.header.frame_id = "map"
+        marker.type = Marker.CUBE
+        marker.action = Marker.ADD
+        marker.frame_locked = False
+        marker.scale = Vector3(0.1, 0.1, 0.1)
+        marker.pose = self.pose
+        marker.color = ColorRGBA(0, 1, 0, 1)
+        marker.id = self.id
+        return marker
+
+
 def main():
+
     face_finder = face_localizer()
 
     rate = rospy.Rate(1)
-    face_finder.mover() 
-        
+    
+    face_finder.mover()
+    #while not rospy.is_shutdown():
+    #    face_finder.find_faces() 
+    #    rate.sleep()
 
     cv2.destroyAllWindows()
 
