@@ -22,6 +22,7 @@ from cv_bridge import CvBridge, CvBridgeError
 from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
 from actionlib_msgs.msg import GoalID
+from nav_msgs.msg import Odometry
 
 
 class face_localizer:
@@ -34,6 +35,8 @@ class face_localizer:
         self.cancel_goal_publisher = rospy.Publisher(
             "/move_base/cancel", GoalID, queue_size=10
         )
+        
+        #self.odom_sub = rospy.Subscriber("/odom", Odometry, self.callback)
         
         rospy.init_node('face_localizer', anonymous=True)
 
@@ -52,7 +55,7 @@ class face_localizer:
 
         # Marker array object used for showing markers in Rviz
         self.marker_array = MarkerArray()
-        self.marker_num = 1
+        self.marker_num = 0
 
         # Subscribe to the image and/or depth topic
         # self.image_sub = rospy.Subscriber("/camera/rgb/image_raw", Image, self.image_callback)
@@ -179,7 +182,7 @@ class face_localizer:
                 # Find the distance to the detected face
                 face_distance = float(np.nanmean(depth_image[y1:y2,x1:x2]))
 
-                print('Distance to face', face_distance)
+                #print('Distance to face', face_distance)
 
                 # Get the time that the depth image was recieved
                 depth_time = depth_image_message.header.stamp
@@ -192,35 +195,28 @@ class face_localizer:
 
                     face_encoding = face_recognition.face_encodings(face_region)
                     
-                    if len(face_encoding) == 0:
-                        continue
-                    else:
+                    if len(face_encoding) != 0:
+                        
                         face_encoding = face_encoding[0]
                     
-                    place_marker = True
-                    
-                    for face in self.faces:
+                        place_marker = True
                         
-                        if not(abs(pose.position.x - face.pose.position.x) > 1 or abs(pose.position.y - face.pose.position.y) > 1):
-                        # faces are close, check if they are the same
-                            if face_recognition.compare_faces([face.enc], face_encoding)[0]:
-                                place_marker = False
-                                
-                    if place_marker:
-                    
-                        self.marker_num += 1
-                        face = Face(pose, face_encoding, self.marker_num)
-                        self.faces.append(face)
-                        #self.faces.append(Face(pose, face_encoding, self.marker_num))
-                        self.marker_array.markers.append(face.to_marker())
-                        self.state = "face_found"
+                        for face in self.faces:
+                            
+                            if not(abs(pose.position.x - face.pose.position.x) > 1 or abs(pose.position.y - face.pose.position.y) > 1):
+                            # faces are close, check if they are the same
+                                if face_recognition.compare_faces([face.enc], face_encoding)[0]:
+                                    place_marker = False
+                                    
+                        if place_marker:
+                        
+                            self.marker_num += 1
+                            face = Face(pose, face_encoding, self.marker_num)
+                            self.faces.append(face)
+                            #self.faces.append(Face(pose, face_encoding, self.marker_num))
+                            self.marker_array.markers.append(face.to_marker())
+                            self.state = "face_found"
         
-        
-        #self.marker_array.markers = list()
-        
-        #for face in self.faces:
-        #    self.marker_array.markers.append(face.to_marker())
-            
         self.markers_pub.publish(self.marker_array)            
 
     
@@ -250,36 +246,41 @@ class face_localizer:
         print("Res status: ", res_status)
         print("Self state: ", self.state)
         
-        if self.state == "face_found":
-            if res_status != 0:
-                self.state = "get_next_waypoint"
-        
-        elif self.state == "greet_face":
-            if res_status != 0:
-                self.state = "stop"
-                rospy.sleep(5)
-                self.state = "get_next_waypoint"
-                
-        elif self.state == "get_next_waypoint":
-            if res_status != 0:
-                self.state = "get_next_waypoint"
-        
-        elif self.state == "moving":
+        if self.state == "moving":
             if res_status == 3 or res_status == 4:
-                
-                if len(self.faces) == self.numb_of_faces:
-                    self.state = "end"
-            
-                else:
-                    self.state = "get_next_waypoint"
-                
-        elif self.state == "end":
-            #if res_status == 3 or res_status == 4:
-            print(" :) ")
+                self.state = "get_next_waypoint"
 
-    def move_to_next_waypoint(self,x_goal,y_goal):
+        elif self.state == "face_found":
+            if res_status == 2:
+                self.state = "approach_face"
+                
+        elif self.state == "approach_face":
+            if res_status == 3 or res_status == 4:
+                self.state = "greet_face"
+            
+        elif self.state == "greet_face":
+            if res_status == 3 or res_status == 4:
+                self.state = "get_next_waypoint"
+
+    #def callback(self, msg):
+        
+        #if self.state == "greet_face":
+    #    print(msg.pose.pose.position.x, msg.pose.pose.position.y)
+
+
+    def move_to_next_waypoint(self,x_goal,y_goal, next_state):
     
-        self.state = "moving"
+        if next_state == "end":
+            self.state = "end"
+            print(" :) ")
+        elif next_state == "moving":
+            self.state = "moving"
+            print("Moving")
+        elif next_state == "approach_face":
+            self.state = "approach_face"
+            print("Approaching face")
+            
+            
         client = actionlib.SimpleActionClient('move_base',MoveBaseAction)
         client.wait_for_server()
         msg = PoseStamped()
@@ -290,7 +291,6 @@ class face_localizer:
         goal.target_pose.pose.position.x = x_goal
         goal.target_pose.pose.position.y = y_goal
         goal.target_pose.pose.orientation.w = 1.0
-        print("Moving")
 
         client.send_goal(goal)
 
@@ -308,37 +308,42 @@ class face_localizer:
 
         while not rospy.is_shutdown():
             print(self.state)
-            #if(self.state == "get_next_waypoint" and i < len(pointsX)-1):
-            
-            if(self.state == "face_found"):
-                #print(GoalID())
-                self.cancel_goal_publisher.publish(GoalID())
-                
-                print("I'm in face_found if statement")
-                self.state = "greet_face"
-                print("Should be greet face: ", self.state)
-                
-            elif(self.state == "greet_face"):
-                print("FACES: ", self.faces[len(self.faces) - 1])
-                self.state = "approach_face"
-                #self.move_to_next_waypoint()
             
             #elif(self.state == "get_next_waypoint" and len(self.faces) != numb_of_faces):
-            elif(self.state == "get_next_waypoint"):
+            if(self.state == "get_next_waypoint"):
                 
                 if len(self.faces) == self.numb_of_faces:
                     
                     self.state == "end"
-                    self.move_to_next_waypoint(0.0, 0.0)
+                    self.move_to_next_waypoint(0.0, 0.0, "end")
                 
                 else:
                     if i == len(pointsX):
                         i = 0
                     
                     print(pointsX[i], " ", pointsY[i])
-                    self.move_to_next_waypoint(pointsX[i],pointsY[i])
+                    self.move_to_next_waypoint(pointsX[i], pointsY[i], "moving")
                     i += 1
 
+            
+            elif self.state == "face_found":
+                
+                self.cancel_goal_publisher.publish(GoalID())
+                 
+            elif self.state == "approach_face":
+            
+                #print(self.marker_num)
+                #rospy.sleep(5)
+                self.move_to_next_waypoint(0.0, 0.0, "approach_face")
+                self.state = "greet_face"
+            
+            elif self.state == "greet_face":
+            
+                print("Hello : ", self.marker_num)
+                rospy.sleep(2)
+                self.state = "get_next_waypoint"
+                
+            
             self.find_faces()        
             rate.sleep()
 
