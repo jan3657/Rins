@@ -14,7 +14,7 @@ import copy
 from os.path import dirname, join
 
 
-from geometry_msgs.msg import PoseStamped, Quaternion, Point
+from geometry_msgs.msg import PoseStamped, Quaternion, Point, PoseWithCovarianceStamped
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionResult
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import PointStamped, Vector3, Pose
@@ -36,7 +36,7 @@ class face_localizer:
             "/move_base/cancel", GoalID, queue_size=10
         )
         
-        #self.odom_sub = rospy.Subscriber("/odom", Odometry, self.callback)
+        self.odom_sub = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.amcl_callback)
         
         rospy.init_node('face_localizer', anonymous=True)
 
@@ -71,6 +71,8 @@ class face_localizer:
         self.state = "get_next_waypoint"
         self.faces = list()
         self.numb_of_faces = 3
+        self.botLocationX = 0.0
+        self.botLocationY = 0.0
 
 
     def get_pose(self,coords,dist,stamp):
@@ -251,7 +253,7 @@ class face_localizer:
                 self.state = "get_next_waypoint"
 
         elif self.state == "face_found":
-            if res_status == 2:
+            if res_status == 2 or res_status == 3:
                 self.state = "approach_face"
                 
         elif self.state == "approach_face":
@@ -262,10 +264,8 @@ class face_localizer:
             if res_status == 3 or res_status == 4:
                 self.state = "get_next_waypoint"
 
-    #def callback(self, msg):
-        
-        #if self.state == "greet_face":
-    #    print(msg.pose.pose.position.x, msg.pose.pose.position.y)
+    def amcl_callback(self, msg):    
+        self.botLocationX,self.botLocationY = msg.pose.pose.position.x, msg.pose.pose.position.y
 
 
     def move_to_next_waypoint(self,x_goal,y_goal, next_state):
@@ -331,11 +331,14 @@ class face_localizer:
                 self.cancel_goal_publisher.publish(GoalID())
                  
             elif self.state == "approach_face":
-            
-                #print(self.marker_num)
-                #rospy.sleep(5)
+                self.needLocation = True           
+                faceX = self.faces[-1].pose.position.x
+                faceY = self.faces[-1].pose.position.y
+                #botX = self.odom_sub.pose.position.x
+                #botY = self.odom_sub.pose.position.y
+                print("Obraz : ",faceX ," " ,faceY ,"\n Robot:", self.botLocationX," ",self.botLocationY ) 
                 self.move_to_next_waypoint(0.0, 0.0, "approach_face")
-                self.state = "greet_face"
+                #self.state = "greet_face"
             
             elif self.state == "greet_face":
             
