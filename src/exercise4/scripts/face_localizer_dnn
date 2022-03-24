@@ -17,13 +17,13 @@ from os.path import dirname, join
 from geometry_msgs.msg import PoseStamped, Quaternion, Point, PoseWithCovarianceStamped
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionResult
 from sensor_msgs.msg import Image
-from geometry_msgs.msg import PointStamped, Vector3, Pose
+from geometry_msgs.msg import PointStamped, Vector3, Pose, Twist
 from cv_bridge import CvBridge, CvBridgeError
 from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
 from actionlib_msgs.msg import GoalID
 from nav_msgs.msg import Odometry
-
+PI = 3.1415926535897
 
 class face_localizer:
     def __init__(self):
@@ -34,6 +34,10 @@ class face_localizer:
         
         self.cancel_goal_publisher = rospy.Publisher(
             "/move_base/cancel", GoalID, queue_size=10
+        )
+        
+        self.rotate = rospy.Publisher(
+            "/cmd_vel_mux/input/teleop", Twist, queue_size=1000
         )
         
         self.odom_sub = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.amcl_callback)
@@ -120,7 +124,7 @@ class face_localizer:
             pose = None
 
         return pose
-    
+
 
     def find_faces(self):
         #print('I got a new image!')
@@ -245,16 +249,23 @@ class face_localizer:
 
     def result_sub_callback(self, data):
         res_status = data.status.status
-        print("Res status: ", res_status)
-        print("Self state: ", self.state)
+        #print("Res status: ", res_status)
+        #print("Self state: ", self.state)
         
         if self.state == "moving":
             if res_status == 3 or res_status == 4:
                 self.state = "get_next_waypoint"
+                #self.state = "rotate"
+
+        #elif self.state == "rotate":
+            ##if res_status == 3 or res_status == 4:
+        #    rospy.sleep(3)
+        #    self.state = "get_next_waypoint"
 
         elif self.state == "face_found":
-            if res_status == 2 or res_status == 3:
-                self.state = "approach_face"
+            #print(res_status)
+            #if res_status == 2: #or self.prev_state == "rotate":
+            self.state = "approach_face"
                 
         elif self.state == "approach_face":
             if res_status == 3 or res_status == 4:
@@ -263,6 +274,7 @@ class face_localizer:
         elif self.state == "greet_face":
             if res_status == 3 or res_status == 4:
                 self.state = "get_next_waypoint"
+
 
     def amcl_callback(self, msg):    
         self.botLocationX,self.botLocationY = msg.pose.pose.position.x, msg.pose.pose.position.y
@@ -296,18 +308,19 @@ class face_localizer:
 
 
     def mover(self):
-        pointsX = [-1.0010287761688232,-1.2022159099578857,-0.1617065668106079,1.1553516387939453,-0.06641178578138351,2.8884198665618896,1.2774776220321655,-0.47786661982536316]
-        pointsY = [1.98361825942993166,0.4219764769077301,0.3451138436794281,-1.0127415657043457,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.689185857772827]
+        pointsX = [-1.0010287761688232,-1.0939724445343018,-0.1617065668106079,1.1553516387939453,-0.06641178578138351,2.8884198665618896,1.2774776220321655,1.9491162300109863,-0.47786661982536316]
+        pointsY = [1.98361825942993166,0.3391437530517578,0.3451138436794281,-1.0127415657043457,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.9044089317321777,2.689185857772827]
         
         # , 0.9174761772155762
         # , 2.71067476272583
         
         i = 0
         next_goal = None
+        
         rate = rospy.Rate(1)
 
         while not rospy.is_shutdown():
-            print(self.state)
+            #print(self.state)
             
             #elif(self.state == "get_next_waypoint" and len(self.faces) != numb_of_faces):
             if(self.state == "get_next_waypoint"):
@@ -321,29 +334,45 @@ class face_localizer:
                     if i == len(pointsX):
                         i = 0
                     
-                    print(pointsX[i], " ", pointsY[i])
+                    #print(pointsX[i], " ", pointsY[i])
                     self.move_to_next_waypoint(pointsX[i], pointsY[i], "moving")
                     i += 1
 
+            #elif self.state == "rotate":
+                
+                #print("im here in rot")
+            #    twist = Twist()
+                
+            #    twist.linear.x = 0
+            #    twist.linear.y = 0
+            #    twist.angular.z = 1
+            #    self.rotate.publish(twist)
+                
+            #    self.state = "get_next_waypoint"
             
             elif self.state == "face_found":
                 
+                #print(GoalID())
                 self.cancel_goal_publisher.publish(GoalID())
                  
             elif self.state == "approach_face":
-                self.needLocation = True           
-                faceX = self.faces[-1].pose.position.x
-                faceY = self.faces[-1].pose.position.y
-                #botX = self.odom_sub.pose.position.x
-                #botY = self.odom_sub.pose.position.y
-                print("Obraz : ",faceX ," " ,faceY ,"\n Robot:", self.botLocationX," ",self.botLocationY ) 
-                self.move_to_next_waypoint(0.0, 0.0, "approach_face")
+            
+                #print(self.marker_num)
+                #rospy.sleep(5)
+                
+                faceX = self.faces[-1].pose.position.x                 
+                faceY = self.faces[-1].pose.position.y                 
+                #botX = self.odom_sub.pose.position.x                 
+                #botY = self.odom_sub.pose.position.y                 
+                #print("Obraz : ",faceX ," " ,faceY ,"\n Robot:", self.botLocationX," ",self.botLocationY )
+                #,"\n Robot:", botX," ",botY )
+                self.move_to_next_waypoint(self.botLocationX, self.botLocationY, "approach_face")
                 #self.state = "greet_face"
             
             elif self.state == "greet_face":
             
                 print("Hello : ", self.marker_num)
-                rospy.sleep(2)
+                rospy.sleep(1)
                 self.state = "get_next_waypoint"
                 
             
