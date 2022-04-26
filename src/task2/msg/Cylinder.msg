@@ -1,2 +1,2 @@
-std_msgs/ColorRGBA color
-geometry_msgs/PointStamped point
+string color
+geometry_msgs/PointStamped position

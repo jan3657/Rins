@@ -12,78 +12,65 @@
 ;;//! \htmlinclude Cylinder.msg.html
 (if (not (find-package "GEOMETRY_MSGS"))
   (ros::roseus-add-msgs "geometry_msgs"))
-(if (not (find-package "STD_MSGS"))
-  (ros::roseus-add-msgs "std_msgs"))
 
 
 (defclass task2::Cylinder
   :super ros::object
-  :slots (_color _point ))
+  :slots (_color _position ))
 
 (defmethod task2::Cylinder
   (:init
    (&key
-    ((:color __color) (instance std_msgs::ColorRGBA :init))
-    ((:point __point) (instance geometry_msgs::PointStamped :init))
+    ((:color __color) "")
+    ((:position __position) (instance geometry_msgs::PointStamped :init))
     )
    (send-super :init)
-   (setq _color __color)
-   (setq _point __point)
+   (setq _color (string __color))
+   (setq _position __position)
    self)
   (:color
-   (&rest __color)
-   (if (keywordp (car __color))
-       (send* _color __color)
+   (&optional __color)
+   (if __color (setq _color __color)) _color)
+  (:position
+   (&rest __position)
+   (if (keywordp (car __position))
+       (send* _position __position)
      (progn
-       (if __color (setq _color (car __color)))
-       _color)))
-  (:point
-   (&rest __point)
-   (if (keywordp (car __point))
-       (send* _point __point)
-     (progn
-       (if __point (setq _point (car __point)))
-       _point)))
+       (if __position (setq _position (car __position)))
+       _position)))
   (:serialization-length
    ()
    (+
-    ;; std_msgs/ColorRGBA _color
-    (send _color :serialization-length)
-    ;; geometry_msgs/PointStamped _point
-    (send _point :serialization-length)
+    ;; string _color
+    4 (length _color)
+    ;; geometry_msgs/PointStamped _position
+    (send _position :serialization-length)
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; std_msgs/ColorRGBA _color
-       (send _color :serialize s)
-     ;; geometry_msgs/PointStamped _point
-       (send _point :serialize s)
+     ;; string _color
+       (write-long (length _color) s) (princ _color s)
+     ;; geometry_msgs/PointStamped _position
+       (send _position :serialize s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; std_msgs/ColorRGBA _color
-     (send _color :deserialize buf ptr-) (incf ptr- (send _color :serialization-length))
-   ;; geometry_msgs/PointStamped _point
-     (send _point :deserialize buf ptr-) (incf ptr- (send _point :serialization-length))
+   ;; string _color
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _color (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; geometry_msgs/PointStamped _position
+     (send _position :deserialize buf ptr-) (incf ptr- (send _position :serialization-length))
    ;;
    self)
   )
 
-(setf (get task2::Cylinder :md5sum-) "3e8ee3f2491ff8e55c488b333304dab7")
+(setf (get task2::Cylinder :md5sum-) "79e9171f8aab1d9f862baaaf0114ad4a")
 (setf (get task2::Cylinder :datatype-) "task2/Cylinder")
 (setf (get task2::Cylinder :definition-)
-      "std_msgs/ColorRGBA color
-geometry_msgs/PointStamped point
-
-================================================================================
-MSG: std_msgs/ColorRGBA
-float32 r
-float32 g
-float32 b
-float32 a
+      "string color
+geometry_msgs/PointStamped position
 
 ================================================================================
 MSG: geometry_msgs/PointStamped
@@ -118,6 +105,6 @@ float64 z
 
 
 
-(provide :task2/Cylinder "3e8ee3f2491ff8e55c488b333304dab7")
+(provide :task2/Cylinder "79e9171f8aab1d9f862baaaf0114ad4a")
 
 

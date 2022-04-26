@@ -20,6 +20,7 @@
 #include "task2/Cylinder.h"
 #include <string>
 
+ros::Publisher cylinder_publisher;
 ros::Publisher pubx;
 ros::Publisher puby;
 ros::Publisher pubm;
@@ -151,16 +152,21 @@ void cloud_cb(const pcl::PCLPointCloud2ConstPtr &cloud_blob)
     point_camera.point.y = centroid[1];
     point_camera.point.z = centroid[2];
 
+    float radius = coefficients_cylinder->values[6];
+    std::cerr << "Radius: " << radius << std::endl;
+        
+    if (abs(radius - 0.12) > 0.005)
+      return;
+
     uint32_t r = 0;
     uint32_t g = 0;
     uint32_t b = 0;
     uint32_t rgb;
     int size = cloud_cylinder->points.size();
 
-    int increment = 500;
+    int step = 500;
     int i = 0;
-
-    for (; i < size; i += increment)
+    for (; i < size; i += step)
     {
       // print(&cloud_cylinder->points[i].rgb);
       rgb = *reinterpret_cast<int *>(&cloud_cylinder->points[i].rgb);
@@ -170,48 +176,59 @@ void cloud_cb(const pcl::PCLPointCloud2ConstPtr &cloud_blob)
       b += (rgb)&0x0000ff;
     }
 
-    r = r / (i / increment);
-    g = g / (i / increment);
-    b = b / (i / increment);
+    r = r / (i / step);
+    g = g / (i / step);
+    b = b / (i / step);
 
-
-    //RGB to name
+    // RGB to name
     uint32_t minimum = r < g ? (r < b ? r : b) : (g < b ? g : b);
     uint32_t rNormalized = r - minimum;
     uint32_t gNormalized = g - minimum;
     uint32_t bNormalized = b - minimum;
-    const char* colour = "";
+    const char *colour = "";
     uint32_t limit = 20;
-    if(rNormalized == 0){
-      if(gNormalized > bNormalized){
-        colour = gNormalized-bNormalized > limit ? "green" : "cyan";
+    if (rNormalized == 0)
+    {
+      if (gNormalized > bNormalized)
+      {
+        colour = gNormalized - bNormalized > limit ? "green" : "cyan";
       }
-      else{
-        colour = bNormalized-gNormalized > limit ? "blue" : "cyan";
-      }
-      
-    }
-    else if(gNormalized == 0){
-      if(rNormalized > bNormalized){
-        colour = rNormalized-bNormalized > limit ? "red" : "magenta";
-      }
-      else{
-        colour = bNormalized-rNormalized > limit ? "blue" : "magenta";
+      else
+      {
+        colour = bNormalized - gNormalized > limit ? "blue" : "cyan";
       }
     }
-    else if(bNormalized == 0){
-      if(gNormalized > rNormalized){
-        colour = gNormalized-rNormalized > limit ? "green" : "yellow";
+    else if (gNormalized == 0)
+    {
+      if (rNormalized > bNormalized)
+      {
+        colour = rNormalized - bNormalized > limit ? "red" : "magenta";
       }
-      else{
-        colour = rNormalized-gNormalized > limit ? "red" : "yellow";
+      else
+      {
+        colour = bNormalized - rNormalized > limit ? "blue" : "magenta";
       }
     }
-    else{
+    else if (bNormalized == 0)
+    {
+      if (gNormalized > rNormalized)
+      {
+        colour = gNormalized - rNormalized > limit ? "green" : "yellow";
+      }
+      else
+      {
+        colour = rNormalized - gNormalized > limit ? "red" : "yellow";
+      }
+    }
+    else
+    {
       colour = "siva";
     }
     std::cerr << colour << std::endl;
-    //std::cerr << "Rdeca Zelena Modra " << r << " " << g << " " << b << std::endl;
+
+
+
+    // std::cerr << "Rdeca Zelena Modra " << r << " " << g << " " << b << std::endl;
 
     try
     {
@@ -231,10 +248,15 @@ void cloud_cb(const pcl::PCLPointCloud2ConstPtr &cloud_blob)
 
     tf2::doTransform(point_camera, point_map, tss);
 
-    std::cerr << "point_camera: " << point_camera.point.x << " " << point_camera.point.y << " " << point_camera.point.z << std::endl;
+    //std::cerr << "point_camera: " << point_camera.point.x << " " << point_camera.point.y << " " << point_camera.point.z << std::endl;
 
-    std::cerr << "point_map: " << point_map.point.x << " " << point_map.point.y << " " << point_map.point.z << std::endl;
+    //std::cerr << "point_map: " << point_map.point.x << " " << point_map.point.y << " " << point_map.point.z << std::endl;
 
+    task2::Cylinder msg;
+    msg.color = colour;
+    msg.position = point_map;
+
+    cylinder_publisher.publish(msg);
     marker.header.frame_id = "map";
     marker.header.stamp = ros::Time::now();
 
@@ -288,6 +310,8 @@ int main(int argc, char **argv)
   puby = nh.advertise<pcl::PCLPointCloud2>("cylinder", 1);
 
   pubm = nh.advertise<visualization_msgs::Marker>("detected_cylinder", 1);
+
+  cylinder_publisher = nh.advertise<task2::Cylinder>("detected_cylinder_colour", 1);
 
   // Spin
   ros::spin();

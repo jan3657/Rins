@@ -10,18 +10,11 @@ import geometry_msgs.msg
 import std_msgs.msg
 
 class Cylinder(genpy.Message):
-  _md5sum = "3e8ee3f2491ff8e55c488b333304dab7"
+  _md5sum = "79e9171f8aab1d9f862baaaf0114ad4a"
   _type = "task2/Cylinder"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """std_msgs/ColorRGBA color
-geometry_msgs/PointStamped point
-
-================================================================================
-MSG: std_msgs/ColorRGBA
-float32 r
-float32 g
-float32 b
-float32 a
+  _full_text = """string color
+geometry_msgs/PointStamped position
 
 ================================================================================
 MSG: geometry_msgs/PointStamped
@@ -52,8 +45,8 @@ float64 x
 float64 y
 float64 z
 """
-  __slots__ = ['color','point']
-  _slot_types = ['std_msgs/ColorRGBA','geometry_msgs/PointStamped']
+  __slots__ = ['color','position']
+  _slot_types = ['string','geometry_msgs/PointStamped']
 
   def __init__(self, *args, **kwds):
     """
@@ -63,7 +56,7 @@ float64 z
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       color,point
+       color,position
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -73,12 +66,12 @@ float64 z
       super(Cylinder, self).__init__(*args, **kwds)
       # message fields cannot be None, assign default values for those that are
       if self.color is None:
-        self.color = std_msgs.msg.ColorRGBA()
-      if self.point is None:
-        self.point = geometry_msgs.msg.PointStamped()
+        self.color = ''
+      if self.position is None:
+        self.position = geometry_msgs.msg.PointStamped()
     else:
-      self.color = std_msgs.msg.ColorRGBA()
-      self.point = geometry_msgs.msg.PointStamped()
+      self.color = ''
+      self.position = geometry_msgs.msg.PointStamped()
 
   def _get_types(self):
     """
@@ -92,16 +85,22 @@ float64 z
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self
-      buff.write(_get_struct_4f3I().pack(_x.color.r, _x.color.g, _x.color.b, _x.color.a, _x.point.header.seq, _x.point.header.stamp.secs, _x.point.header.stamp.nsecs))
-      _x = self.point.header.frame_id
+      _x = self.color
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3d().pack(_x.point.point.x, _x.point.point.y, _x.point.point.z))
+      buff.write(_get_struct_3I().pack(_x.position.header.seq, _x.position.header.stamp.secs, _x.position.header.stamp.nsecs))
+      _x = self.position.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self
+      buff.write(_get_struct_3d().pack(_x.position.point.x, _x.position.point.y, _x.position.point.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -113,28 +112,35 @@ float64 z
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.color is None:
-        self.color = std_msgs.msg.ColorRGBA()
-      if self.point is None:
-        self.point = geometry_msgs.msg.PointStamped()
+      if self.position is None:
+        self.position = geometry_msgs.msg.PointStamped()
       end = 0
-      _x = self
-      start = end
-      end += 28
-      (_x.color.r, _x.color.g, _x.color.b, _x.color.a, _x.point.header.seq, _x.point.header.stamp.secs, _x.point.header.stamp.nsecs,) = _get_struct_4f3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
       start = end
       end += length
       if python3:
-        self.point.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        self.color = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.point.header.frame_id = str[start:end]
+        self.color = str[start:end]
+      _x = self
+      start = end
+      end += 12
+      (_x.position.header.seq, _x.position.header.stamp.secs, _x.position.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.position.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.position.header.frame_id = str[start:end]
       _x = self
       start = end
       end += 24
-      (_x.point.point.x, _x.point.point.y, _x.point.point.z,) = _get_struct_3d().unpack(str[start:end])
+      (_x.position.point.x, _x.position.point.y, _x.position.point.z,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -147,16 +153,22 @@ float64 z
     :param numpy: numpy python module
     """
     try:
-      _x = self
-      buff.write(_get_struct_4f3I().pack(_x.color.r, _x.color.g, _x.color.b, _x.color.a, _x.point.header.seq, _x.point.header.stamp.secs, _x.point.header.stamp.nsecs))
-      _x = self.point.header.frame_id
+      _x = self.color
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3d().pack(_x.point.point.x, _x.point.point.y, _x.point.point.z))
+      buff.write(_get_struct_3I().pack(_x.position.header.seq, _x.position.header.stamp.secs, _x.position.header.stamp.nsecs))
+      _x = self.position.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self
+      buff.write(_get_struct_3d().pack(_x.position.point.x, _x.position.point.y, _x.position.point.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -169,28 +181,35 @@ float64 z
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.color is None:
-        self.color = std_msgs.msg.ColorRGBA()
-      if self.point is None:
-        self.point = geometry_msgs.msg.PointStamped()
+      if self.position is None:
+        self.position = geometry_msgs.msg.PointStamped()
       end = 0
-      _x = self
-      start = end
-      end += 28
-      (_x.color.r, _x.color.g, _x.color.b, _x.color.a, _x.point.header.seq, _x.point.header.stamp.secs, _x.point.header.stamp.nsecs,) = _get_struct_4f3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
       start = end
       end += length
       if python3:
-        self.point.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        self.color = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.point.header.frame_id = str[start:end]
+        self.color = str[start:end]
+      _x = self
+      start = end
+      end += 12
+      (_x.position.header.seq, _x.position.header.stamp.secs, _x.position.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.position.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.position.header.frame_id = str[start:end]
       _x = self
       start = end
       end += 24
-      (_x.point.point.x, _x.point.point.y, _x.point.point.z,) = _get_struct_3d().unpack(str[start:end])
+      (_x.position.point.x, _x.position.point.y, _x.position.point.z,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -199,15 +218,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_3I = None
+def _get_struct_3I():
+    global _struct_3I
+    if _struct_3I is None:
+        _struct_3I = struct.Struct("<3I")
+    return _struct_3I
 _struct_3d = None
 def _get_struct_3d():
     global _struct_3d
     if _struct_3d is None:
         _struct_3d = struct.Struct("<3d")
     return _struct_3d
-_struct_4f3I = None
-def _get_struct_4f3I():
-    global _struct_4f3I
-    if _struct_4f3I is None:
-        _struct_4f3I = struct.Struct("<4f3I")
-    return _struct_4f3I

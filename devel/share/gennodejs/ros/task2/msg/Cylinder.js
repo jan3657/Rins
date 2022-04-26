@@ -12,7 +12,6 @@ const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
 let geometry_msgs = _finder('geometry_msgs');
-let std_msgs = _finder('std_msgs');
 
 //-----------------------------------------------------------
 
@@ -21,20 +20,20 @@ class Cylinder {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.color = null;
-      this.point = null;
+      this.position = null;
     }
     else {
       if (initObj.hasOwnProperty('color')) {
         this.color = initObj.color
       }
       else {
-        this.color = new std_msgs.msg.ColorRGBA();
+        this.color = '';
       }
-      if (initObj.hasOwnProperty('point')) {
-        this.point = initObj.point
+      if (initObj.hasOwnProperty('position')) {
+        this.position = initObj.position
       }
       else {
-        this.point = new geometry_msgs.msg.PointStamped();
+        this.position = new geometry_msgs.msg.PointStamped();
       }
     }
   }
@@ -42,9 +41,9 @@ class Cylinder {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Cylinder
     // Serialize message field [color]
-    bufferOffset = std_msgs.msg.ColorRGBA.serialize(obj.color, buffer, bufferOffset);
-    // Serialize message field [point]
-    bufferOffset = geometry_msgs.msg.PointStamped.serialize(obj.point, buffer, bufferOffset);
+    bufferOffset = _serializer.string(obj.color, buffer, bufferOffset);
+    // Serialize message field [position]
+    bufferOffset = geometry_msgs.msg.PointStamped.serialize(obj.position, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -53,16 +52,17 @@ class Cylinder {
     let len;
     let data = new Cylinder(null);
     // Deserialize message field [color]
-    data.color = std_msgs.msg.ColorRGBA.deserialize(buffer, bufferOffset);
-    // Deserialize message field [point]
-    data.point = geometry_msgs.msg.PointStamped.deserialize(buffer, bufferOffset);
+    data.color = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [position]
+    data.position = geometry_msgs.msg.PointStamped.deserialize(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
-    length += geometry_msgs.msg.PointStamped.getMessageSize(object.point);
-    return length + 16;
+    length += _getByteLength(object.color);
+    length += geometry_msgs.msg.PointStamped.getMessageSize(object.position);
+    return length + 4;
   }
 
   static datatype() {
@@ -72,21 +72,14 @@ class Cylinder {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '3e8ee3f2491ff8e55c488b333304dab7';
+    return '79e9171f8aab1d9f862baaaf0114ad4a';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    std_msgs/ColorRGBA color
-    geometry_msgs/PointStamped point
-    
-    ================================================================================
-    MSG: std_msgs/ColorRGBA
-    float32 r
-    float32 g
-    float32 b
-    float32 a
+    string color
+    geometry_msgs/PointStamped position
     
     ================================================================================
     MSG: geometry_msgs/PointStamped
@@ -127,17 +120,17 @@ class Cylinder {
     }
     const resolved = new Cylinder(null);
     if (msg.color !== undefined) {
-      resolved.color = std_msgs.msg.ColorRGBA.Resolve(msg.color)
+      resolved.color = msg.color;
     }
     else {
-      resolved.color = new std_msgs.msg.ColorRGBA()
+      resolved.color = ''
     }
 
-    if (msg.point !== undefined) {
-      resolved.point = geometry_msgs.msg.PointStamped.Resolve(msg.point)
+    if (msg.position !== undefined) {
+      resolved.position = geometry_msgs.msg.PointStamped.Resolve(msg.position)
     }
     else {
-      resolved.point = new geometry_msgs.msg.PointStamped()
+      resolved.position = new geometry_msgs.msg.PointStamped()
     }
 
     return resolved;

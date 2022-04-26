@@ -15,7 +15,6 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <std_msgs/ColorRGBA.h>
 #include <geometry_msgs/PointStamped.h>
 
 namespace task2
@@ -27,21 +26,21 @@ struct Cylinder_
 
   Cylinder_()
     : color()
-    , point()  {
+    , position()  {
     }
   Cylinder_(const ContainerAllocator& _alloc)
     : color(_alloc)
-    , point(_alloc)  {
+    , position(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef  ::std_msgs::ColorRGBA_<ContainerAllocator>  _color_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _color_type;
   _color_type color;
 
-   typedef  ::geometry_msgs::PointStamped_<ContainerAllocator>  _point_type;
-  _point_type point;
+   typedef  ::geometry_msgs::PointStamped_<ContainerAllocator>  _position_type;
+  _position_type position;
 
 
 
@@ -73,7 +72,7 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::task2::Cylinder_<ContainerAllocator1> & lhs, const ::task2::Cylinder_<ContainerAllocator2> & rhs)
 {
   return lhs.color == rhs.color &&
-    lhs.point == rhs.point;
+    lhs.position == rhs.position;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -130,12 +129,12 @@ struct MD5Sum< ::task2::Cylinder_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "3e8ee3f2491ff8e55c488b333304dab7";
+    return "79e9171f8aab1d9f862baaaf0114ad4a";
   }
 
   static const char* value(const ::task2::Cylinder_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x3e8ee3f2491ff8e5ULL;
-  static const uint64_t static_value2 = 0x5c488b333304dab7ULL;
+  static const uint64_t static_value1 = 0x79e9171f8aab1d9fULL;
+  static const uint64_t static_value2 = 0x862baaaf0114ad4aULL;
 };
 
 template<class ContainerAllocator>
@@ -154,15 +153,8 @@ struct Definition< ::task2::Cylinder_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "std_msgs/ColorRGBA color\n"
-"geometry_msgs/PointStamped point\n"
-"\n"
-"================================================================================\n"
-"MSG: std_msgs/ColorRGBA\n"
-"float32 r\n"
-"float32 g\n"
-"float32 b\n"
-"float32 a\n"
+    return "string color\n"
+"geometry_msgs/PointStamped position\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/PointStamped\n"
@@ -211,7 +203,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.color);
-      stream.next(m.point);
+      stream.next(m.position);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -231,11 +223,10 @@ struct Printer< ::task2::Cylinder_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::task2::Cylinder_<ContainerAllocator>& v)
   {
     s << indent << "color: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.color);
+    s << indent << "position: ";
     s << std::endl;
-    Printer< ::std_msgs::ColorRGBA_<ContainerAllocator> >::stream(s, indent + "  ", v.color);
-    s << indent << "point: ";
-    s << std::endl;
-    Printer< ::geometry_msgs::PointStamped_<ContainerAllocator> >::stream(s, indent + "  ", v.point);
+    Printer< ::geometry_msgs::PointStamped_<ContainerAllocator> >::stream(s, indent + "  ", v.position);
   }
 };
 
