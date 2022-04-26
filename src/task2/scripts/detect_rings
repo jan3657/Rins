@@ -27,6 +27,8 @@ class The_Ring:
         self.marker_array = MarkerArray()
         self.marker_num = 1
 
+        self.rings = list()
+
         # Subscribe to the image and/or depth topic
         #self.image_sub = rospy.Subscriber("/camera/rgb/image_raw", Image, self.image_callback)
         self.depth_sub = rospy.Subscriber("/camera/depth/image_raw", Image, self.depth_callback)
@@ -37,6 +39,7 @@ class The_Ring:
         # Object we use for transforming between coordinate frames
         self.tf_buf = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
+
 
 
     def get_pose(self,e,dist):
@@ -77,26 +80,11 @@ class The_Ring:
         pose.position.y = point_world.point.y
         pose.position.z = point_world.point.z
 
-        # Create a marker used for visualization
-        self.marker_num += 1
-        marker = Marker()
-        marker.header.stamp = point_world.header.stamp
-        marker.header.frame_id = point_world.header.frame_id
-        marker.pose = pose
-        marker.type = Marker.CUBE
-        marker.action = Marker.ADD
-        marker.frame_locked = False
-        marker.lifetime = rospy.Duration.from_sec(10)
-        marker.id = self.marker_num
-        marker.scale = Vector3(0.1, 0.1, 0.1)
-        marker.color = ColorRGBA(0, 1, 0, 1)
-        self.marker_array.markers.append(marker)
-
-        self.markers_pub.publish(self.marker_array)
+        return point_world, pose
 
 
     def depth_callback(self,data):
-        print('I got a new image!')
+        #print('I got a new image!')
 
         try:
             cv_image = self.bridge.imgmsg_to_cv2(data, "32FC1")
@@ -151,10 +139,10 @@ class The_Ring:
                 if dist < 5:
                     candidates.append((e1,e2))
 
-        print("Processing is done! found", len(candidates), "candidates for rings")
+        #print("Processing is done! found", len(candidates), "candidates for rings")
 
         """try:
-            depth_img = rospy.wait_for_message('/camera/rgb/image_raw', Image)
+            depth_img = rospy.wait_for_message('/camera/depth/image_raw', Image)
         except Exception as e:
             print(e)"""
 
@@ -182,15 +170,57 @@ class The_Ring:
             y_min = y1 if y1 > 0 else 0
             y_max = y2 if y2 < image_viz.shape[1] else image_viz.shape[1]
 
+
             #depth_image = self.bridge.imgmsg_to_cv2(depth_img, "16UC1")
             #depth_image = self.bridge.imgmsg_to_cv2(depth_img, "32FC1")
 
             #self.get_pose(e1, float(np.mean(depth_image[x_min:x_max,y_min:y_max]))/1000.0)
-            self.get_pose(e1, float(np.mean(image_viz[x_min:x_max,y_min:y_max])))
+            point_world, pose = self.get_pose(e1, float(np.nanmean(cv_image[x_min:x_max,y_min:y_max])))
+            
+            place_marker = True
+                        
+            for ring in self.rings:
+                
+                if not(abs(pose.position.x - ring.pose.position.x) > 1 or abs(pose.position.y - ring.pose.position.y) > 1):
+                    place_marker = False
+                        
+            if place_marker:
+                
+            
+                #Dodaj circle
+                self.marker_num += 1
+                ring = Ring(pose, point_world, self.marker_num)
+                self.rings.append(ring)
+                self.marker_array.markers.append(ring.to_marker())
 
-        if len(candidates)>0:
+            
+            
+
+        if len(candidates) > 0:
                 cv2.imshow("Image window",image_viz)
                 cv2.waitKey(1)
+        
+        self.markers_pub.publish(self.marker_array)
+
+        #Dubi barvu
+        try:
+            coloured_img_msg = rospy.wait_for_message('/camera/rgb/image_raw', Image)
+            coloured_img = self.bridge.imgmsg_to_cv2(coloured_img_msg, "bgr8")
+
+        except CvBridgeError as e:
+            print(e)
+
+        m1 = np.zeros(coloured_img.shape[0:2], np.uint8)
+        m2 = np.zeros(coloured_img.shape[0:2], np.uint8)
+
+        m1 = cv2.ellipse(m1, e1, (255, 255, 255), -1)
+        m2 = cv2.ellipse(m2, e2, (255, 255, 255), -1)
+
+        m3 = m2 - m1
+
+        bgr_color = cv2.mean(coloured_img, mask=m3)    
+
+        print(bgr_color)
 
     """def image_callback(self,data):
 
@@ -205,6 +235,26 @@ class The_Ring:
         cv2.imshow("Depth window", image_viz)
         cv2.waitKey(1)"""
 
+
+class Ring:
+
+    def __init__(self, pose, point_world, rId):
+        self.pose = pose
+        self.point_world = point_world
+        self.id = rId
+
+    def to_marker(self):
+        marker = Marker()
+        marker.header.stamp = self.point_world.header.stamp
+        marker.header.frame_id = self.point_world.header.frame_id
+        marker.type = Marker.CUBE
+        marker.action = Marker.ADD
+        marker.frame_locked = False
+        marker.scale = Vector3(0.1, 0.1, 0.1)
+        marker.pose = self.pose
+        marker.color = ColorRGBA(0, 1, 0, 1)
+        marker.id = self.id
+        return marker
 
 def main():
 
