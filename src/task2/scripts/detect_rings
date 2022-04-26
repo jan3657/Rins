@@ -28,8 +28,8 @@ class The_Ring:
         self.marker_num = 1
 
         # Subscribe to the image and/or depth topic
-        self.image_sub = rospy.Subscriber("/camera/rgb/image_raw", Image, self.image_callback)
-        # self.depth_sub = rospy.Subscriber("/camera/depth_registered/image_raw", Image, self.depth_callback)
+        #self.image_sub = rospy.Subscriber("/camera/rgb/image_raw", Image, self.image_callback)
+        self.depth_sub = rospy.Subscriber("/camera/depth/image_raw", Image, self.depth_callback)
 
         # Publiser for the visualization markers
         self.markers_pub = rospy.Publisher('markers', MarkerArray, queue_size=1000)
@@ -95,34 +95,39 @@ class The_Ring:
         self.markers_pub.publish(self.marker_array)
 
 
-    def image_callback(self,data):
+    def depth_callback(self,data):
         print('I got a new image!')
 
         try:
-            cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+            cv_image = self.bridge.imgmsg_to_cv2(data, "32FC1")
+            depth_16u = self.bridge.imgmsg_to_cv2(data, "16UC1")
         except CvBridgeError as e:
             print(e)
 
+        image_1 = depth_16u / 65536.0 * 255
+        image_1 = image_1/np.max(image_1)*255
+
+        image_viz = np.array(image_1, dtype= np.uint8)
         # Set the dimensions of the image
-        self.dims = cv_image.shape
+        self.dims = image_viz.shape
 
         # Tranform image to gayscale
-        gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+        #gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
 
         # Do histogram equlization
-        img = cv2.equalizeHist(gray)
+        #img = cv2.equalizeHist(gray)
 
         # Binarize the image, there are different ways to do it
         #ret, thresh = cv2.threshold(img, 50, 255, 0)
-        #ret, thresh = cv2.threshold(img, 70, 255, cv2.THRESH_BINARY)
-        thresh = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 25)
+        ret, thresh = cv2.threshold(image_viz, 70, 255, cv2.THRESH_BINARY)
+        #thresh = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 25)
 
         # Extract contours
         contours, hierarchy = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
         # Example how to draw the contours, only for visualization purposes
-        cv2.drawContours(img, contours, -1, (255, 0, 0), 3)
-        cv2.imshow("Contour window",img)
+        cv2.drawContours(image_viz, contours, -1, (255, 0, 0), 3)
+        cv2.imshow("Contour window",image_viz)
         cv2.waitKey(1)
 
         # Fit elipses to all extracted contours
@@ -148,10 +153,10 @@ class The_Ring:
 
         print("Processing is done! found", len(candidates), "candidates for rings")
 
-        try:
-            depth_img = rospy.wait_for_message('/camera/depth/image_raw', Image)
+        """try:
+            depth_img = rospy.wait_for_message('/camera/rgb/image_raw', Image)
         except Exception as e:
-            print(e)
+            print(e)"""
 
         # Extract the depth from the depth image
         for c in candidates:
@@ -161,8 +166,8 @@ class The_Ring:
             e2 = c[1]
 
             # drawing the ellipses on the image
-            cv2.ellipse(cv_image, e1, (0, 255, 0), 2)
-            cv2.ellipse(cv_image, e2, (0, 255, 0), 2)
+            cv2.ellipse(image_viz, e1, (0, 255, 0), 2)
+            cv2.ellipse(image_viz, e2, (0, 255, 0), 2)
 
             size = (e1[1][0]+e1[1][1])/2
             center = (e1[0][1], e1[0][0])
@@ -170,24 +175,24 @@ class The_Ring:
             x1 = int(center[0] - size / 2)
             x2 = int(center[0] + size / 2)
             x_min = x1 if x1>0 else 0
-            x_max = x2 if x2<cv_image.shape[0] else cv_image.shape[0]
+            x_max = x2 if x2<image_viz.shape[0] else image_viz.shape[0]
 
             y1 = int(center[1] - size / 2)
             y2 = int(center[1] + size / 2)
             y_min = y1 if y1 > 0 else 0
-            y_max = y2 if y2 < cv_image.shape[1] else cv_image.shape[1]
+            y_max = y2 if y2 < image_viz.shape[1] else image_viz.shape[1]
 
             #depth_image = self.bridge.imgmsg_to_cv2(depth_img, "16UC1")
-            depth_image = self.bridge.imgmsg_to_cv2(depth_img, "32FC1")
+            #depth_image = self.bridge.imgmsg_to_cv2(depth_img, "32FC1")
 
             #self.get_pose(e1, float(np.mean(depth_image[x_min:x_max,y_min:y_max]))/1000.0)
-            self.get_pose(e1, float(np.mean(depth_image[x_min:x_max,y_min:y_max])))
+            self.get_pose(e1, float(np.mean(image_viz[x_min:x_max,y_min:y_max])))
 
         if len(candidates)>0:
-                cv2.imshow("Image window",cv_image)
+                cv2.imshow("Image window",image_viz)
                 cv2.waitKey(1)
 
-    def depth_callback(self,data):
+    """def image_callback(self,data):
 
         try:
             depth_image = self.bridge.imgmsg_to_cv2(data, "16UC1")
@@ -195,13 +200,10 @@ class The_Ring:
             print(e)
 
         # Do the necessairy conversion so we can visuzalize it in OpenCV
-        image_1 = depth_image / 65536.0 * 255
-        image_1 =image_1/np.max(image_1)*255
 
-        image_viz = np.array(image_1, dtype= np.uint8)
 
         cv2.imshow("Depth window", image_viz)
-        cv2.waitKey(1)
+        cv2.waitKey(1)"""
 
 
 def main():
