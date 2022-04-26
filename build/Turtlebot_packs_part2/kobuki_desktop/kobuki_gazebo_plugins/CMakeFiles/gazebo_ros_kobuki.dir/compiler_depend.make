@@ -2333,10 +2333,14 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/transport8/ignition/transport/Node.hh \
   /usr/include/ignition/msgs5/ignition/msgs.hh \
   /usr/include/ignition/msgs5/ignition/msgs/config.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/detail/PointCloudPackedUtils.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/detail/SuppressWarning.hh \
   /usr/include/ignition/msgs5/ignition/msgs/Factory.hh \
   /usr/include/ignition/msgs5/ignition/msgs/Filesystem.hh \
   /usr/include/ignition/msgs5/ignition/msgs/SuppressWarning.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/PointCloudPackedUtils.hh \
+  /usr/include/c++/9/cstdarg \
   /usr/include/ignition/msgs5/ignition/msgs/Utility.hh \
   /usr/include/ignition/msgs5/ignition/msgs/MessageTypes.hh \
   /usr/include/ignition/msgs5/ignition/msgs/actor.pb.h \
@@ -2450,6 +2454,7 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/msgs5/ignition/msgs/marker_v.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/model_configuration.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/model_v.pb.h \
+  /usr/include/ignition/msgs5/ignition/msgs/navsat.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/occupancy_grid.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/odometry.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/twist.pb.h \
@@ -2464,7 +2469,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/msgs5/ignition/msgs/physics.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/plugin_v.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pointcloud.pb.h \
-  /usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pose_animation.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pose_trajectory.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/propagation_grid.pb.h \
@@ -2716,7 +2720,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /opt/ros/noetic/include/ros/rate.h \
   /opt/ros/noetic/include/ros/console.h \
   /opt/ros/noetic/include/ros/console_backend.h \
-  /usr/include/c++/9/cstdarg \
   /usr/include/log4cxx/level.h \
   /usr/include/log4cxx/logstring.h \
   /usr/include/log4cxx/log4cxx.h \
@@ -5177,10 +5180,14 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/transport8/ignition/transport/Node.hh \
   /usr/include/ignition/msgs5/ignition/msgs.hh \
   /usr/include/ignition/msgs5/ignition/msgs/config.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/detail/PointCloudPackedUtils.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/detail/SuppressWarning.hh \
   /usr/include/ignition/msgs5/ignition/msgs/Factory.hh \
   /usr/include/ignition/msgs5/ignition/msgs/Filesystem.hh \
   /usr/include/ignition/msgs5/ignition/msgs/SuppressWarning.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/PointCloudPackedUtils.hh \
+  /usr/include/c++/9/cstdarg \
   /usr/include/ignition/msgs5/ignition/msgs/Utility.hh \
   /usr/include/ignition/msgs5/ignition/msgs/MessageTypes.hh \
   /usr/include/ignition/msgs5/ignition/msgs/actor.pb.h \
@@ -5294,6 +5301,7 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/msgs5/ignition/msgs/marker_v.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/model_configuration.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/model_v.pb.h \
+  /usr/include/ignition/msgs5/ignition/msgs/navsat.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/occupancy_grid.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/odometry.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/twist.pb.h \
@@ -5308,7 +5316,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/msgs5/ignition/msgs/physics.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/plugin_v.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pointcloud.pb.h \
-  /usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pose_animation.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pose_trajectory.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/propagation_grid.pb.h \
@@ -5716,7 +5723,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /opt/ros/noetic/include/ros/rate.h \
   /opt/ros/noetic/include/ros/console.h \
   /opt/ros/noetic/include/ros/console_backend.h \
-  /usr/include/c++/9/cstdarg \
   /usr/include/log4cxx/level.h \
   /usr/include/log4cxx/logstring.h \
   /usr/include/log4cxx/log4cxx.h \
@@ -8199,10 +8205,14 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/transport8/ignition/transport/Node.hh \
   /usr/include/ignition/msgs5/ignition/msgs.hh \
   /usr/include/ignition/msgs5/ignition/msgs/config.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/detail/PointCloudPackedUtils.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/detail/SuppressWarning.hh \
   /usr/include/ignition/msgs5/ignition/msgs/Factory.hh \
   /usr/include/ignition/msgs5/ignition/msgs/Filesystem.hh \
   /usr/include/ignition/msgs5/ignition/msgs/SuppressWarning.hh \
+  /usr/include/ignition/msgs5/ignition/msgs/PointCloudPackedUtils.hh \
+  /usr/include/c++/9/cstdarg \
   /usr/include/ignition/msgs5/ignition/msgs/Utility.hh \
   /usr/include/ignition/msgs5/ignition/msgs/MessageTypes.hh \
   /usr/include/ignition/msgs5/ignition/msgs/actor.pb.h \
@@ -8316,6 +8326,7 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/msgs5/ignition/msgs/marker_v.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/model_configuration.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/model_v.pb.h \
+  /usr/include/ignition/msgs5/ignition/msgs/navsat.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/occupancy_grid.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/odometry.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/twist.pb.h \
@@ -8330,7 +8341,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /usr/include/ignition/msgs5/ignition/msgs/physics.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/plugin_v.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pointcloud.pb.h \
-  /usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pose_animation.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/pose_trajectory.pb.h \
   /usr/include/ignition/msgs5/ignition/msgs/propagation_grid.pb.h \
@@ -8738,7 +8748,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
   /opt/ros/noetic/include/ros/rate.h \
   /opt/ros/noetic/include/ros/console.h \
   /opt/ros/noetic/include/ros/console_backend.h \
-  /usr/include/c++/9/cstdarg \
   /usr/include/log4cxx/level.h \
   /usr/include/log4cxx/logstring.h \
   /usr/include/log4cxx/log4cxx.h \
@@ -9426,8 +9435,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 
 /usr/include/log4cxx/log4cxx.h:
 
-/usr/include/c++/9/cstdarg:
-
 /opt/ros/noetic/include/ros/console_backend.h:
 
 /opt/ros/noetic/include/ros/console.h:
@@ -9768,8 +9775,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 
 /usr/include/ignition/msgs5/ignition/msgs/pose_animation.pb.h:
 
-/usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h:
-
 /usr/include/ignition/msgs5/ignition/msgs/pointcloud.pb.h:
 
 /usr/include/boost/detail/reference_content.hpp:
@@ -10068,6 +10073,10 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 
 /usr/include/boost/predef/platform/mingw32.h:
 
+/usr/include/ignition/msgs5/ignition/msgs/heightmapgeom.pb.h:
+
+/usr/include/boost/predef/os/vms.h:
+
 /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h:
 
 /usr/include/boost/predef/os/unix.h:
@@ -10255,8 +10264,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 /usr/include/boost/date_time/adjust_functors.hpp:
 
 /usr/include/boost/date_time/gregorian/greg_date.hpp:
-
-/usr/include/boost/date_time/date_duration_types.hpp:
 
 /usr/include/boost/thread/mutex.hpp:
 
@@ -10783,10 +10790,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 /usr/include/boost/preprocessor/detail/is_binary.hpp:
 
 /usr/include/boost/mpl/vector.hpp:
-
-/usr/include/boost/predef/os/vms.h:
-
-/usr/include/ignition/msgs5/ignition/msgs/heightmapgeom.pb.h:
 
 /usr/include/ignition/math6/ignition/math/Matrix4.hh:
 
@@ -12066,6 +12069,10 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 
 /usr/include/boost/type_traits/is_array.hpp:
 
+/usr/include/ignition/msgs5/ignition/msgs/planegeom.pb.h:
+
+/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
+
 /usr/include/unistd.h:
 
 /usr/include/boost/mpl/list/aux_/O1_size.hpp:
@@ -12161,6 +12168,10 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 /usr/include/boost/math/tools/promotion.hpp:
 
 /usr/include/gazebo-11/gazebo/common/ModelDatabase.hh:
+
+/usr/include/ignition/msgs5/ignition/msgs/image.pb.h:
+
+/usr/include/c++/9/bits/stl_multimap.h:
 
 /opt/ros/noetic/include/geometry_msgs/TwistStamped.h:
 
@@ -12517,6 +12528,8 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 /usr/include/gazebo-11/gazebo/msgs/log_playback_control.pb.h:
 
 /usr/include/boost/predef/language.h:
+
+/usr/include/ignition/msgs5/ignition/msgs/navsat.pb.h:
 
 /usr/include/boost/asio/placeholders.hpp:
 
@@ -13126,10 +13139,6 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 
 /usr/include/ignition/msgs5/ignition/msgs/vector2d.pb.h:
 
-/usr/include/boost/thread/shared_mutex.hpp:
-
-/usr/include/boost/core/use_default.hpp:
-
 /usr/include/c++/9/bits/std_mutex.h:
 
 /usr/include/boost/iterator/interoperable.hpp:
@@ -13590,6 +13599,8 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 
 /usr/include/sdformat-9.7/sdf/parser.hh:
 
+/usr/include/c++/9/cstdarg:
+
 /usr/include/boost/exception/detail/exception_ptr.hpp:
 
 /usr/include/sdformat-9.7/sdf/SDFImpl.hh:
@@ -13857,6 +13868,12 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 /usr/include/google/protobuf/stubs/fastmem.h:
 
 /usr/include/boost/move/algorithm.hpp:
+
+/usr/include/boost/thread/shared_mutex.hpp:
+
+/usr/include/boost/core/use_default.hpp:
+
+/usr/include/ignition/msgs5/ignition/msgs/detail/PointCloudPackedUtils.hh:
 
 /usr/include/google/protobuf/map.h:
 
@@ -15004,9 +15021,15 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 
 /usr/include/ignition/msgs5/ignition/msgs/config.hh:
 
+/usr/include/ignition/msgs5/ignition/msgs/pointcloud_packed.pb.h:
+
 /usr/include/ignition/msgs5/ignition/msgs/detail/SuppressWarning.hh:
 
 /usr/include/ignition/msgs5/ignition/msgs/Factory.hh:
+
+/usr/include/boost/date_time/date_duration_types.hpp:
+
+/usr/include/ignition/msgs5/ignition/msgs/PointCloudPackedUtils.hh:
 
 /usr/include/c++/9/bits/stream_iterator.h:
 
@@ -15049,11 +15072,3 @@ Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros
 /usr/include/ignition/math6/ignition/math/Helpers.hh:
 
 /usr/include/ignition/msgs5/ignition/msgs/cylindergeom.pb.h:
-
-/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
-
-/usr/include/ignition/msgs5/ignition/msgs/planegeom.pb.h:
-
-/usr/include/c++/9/bits/stl_multimap.h:
-
-/usr/include/ignition/msgs5/ignition/msgs/image.pb.h:

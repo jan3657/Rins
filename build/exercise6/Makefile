@@ -326,6 +326,174 @@ topic_tools_generate_messages_py/fast:
 .PHONY : topic_tools_generate_messages_py/fast
 
 # Convenience name for target.
+exercise6/CMakeFiles/exercise6_generate_messages.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_generate_messages.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_generate_messages.dir/rule
+
+# Convenience name for target.
+exercise6_generate_messages: exercise6/CMakeFiles/exercise6_generate_messages.dir/rule
+.PHONY : exercise6_generate_messages
+
+# fast build rule for target.
+exercise6_generate_messages/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_generate_messages.dir/build.make exercise6/CMakeFiles/exercise6_generate_messages.dir/build
+.PHONY : exercise6_generate_messages/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/_exercise6_generate_messages_check_deps_Cylinder.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/_exercise6_generate_messages_check_deps_Cylinder.dir/rule
+.PHONY : exercise6/CMakeFiles/_exercise6_generate_messages_check_deps_Cylinder.dir/rule
+
+# Convenience name for target.
+_exercise6_generate_messages_check_deps_Cylinder: exercise6/CMakeFiles/_exercise6_generate_messages_check_deps_Cylinder.dir/rule
+.PHONY : _exercise6_generate_messages_check_deps_Cylinder
+
+# fast build rule for target.
+_exercise6_generate_messages_check_deps_Cylinder/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/_exercise6_generate_messages_check_deps_Cylinder.dir/build.make exercise6/CMakeFiles/_exercise6_generate_messages_check_deps_Cylinder.dir/build
+.PHONY : _exercise6_generate_messages_check_deps_Cylinder/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_generate_messages_cpp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_generate_messages_cpp.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+exercise6_generate_messages_cpp: exercise6/CMakeFiles/exercise6_generate_messages_cpp.dir/rule
+.PHONY : exercise6_generate_messages_cpp
+
+# fast build rule for target.
+exercise6_generate_messages_cpp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_generate_messages_cpp.dir/build.make exercise6/CMakeFiles/exercise6_generate_messages_cpp.dir/build
+.PHONY : exercise6_generate_messages_cpp/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_gencpp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_gencpp.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_gencpp.dir/rule
+
+# Convenience name for target.
+exercise6_gencpp: exercise6/CMakeFiles/exercise6_gencpp.dir/rule
+.PHONY : exercise6_gencpp
+
+# fast build rule for target.
+exercise6_gencpp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_gencpp.dir/build.make exercise6/CMakeFiles/exercise6_gencpp.dir/build
+.PHONY : exercise6_gencpp/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_generate_messages_eus.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_generate_messages_eus.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+exercise6_generate_messages_eus: exercise6/CMakeFiles/exercise6_generate_messages_eus.dir/rule
+.PHONY : exercise6_generate_messages_eus
+
+# fast build rule for target.
+exercise6_generate_messages_eus/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_generate_messages_eus.dir/build.make exercise6/CMakeFiles/exercise6_generate_messages_eus.dir/build
+.PHONY : exercise6_generate_messages_eus/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_geneus.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_geneus.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_geneus.dir/rule
+
+# Convenience name for target.
+exercise6_geneus: exercise6/CMakeFiles/exercise6_geneus.dir/rule
+.PHONY : exercise6_geneus
+
+# fast build rule for target.
+exercise6_geneus/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_geneus.dir/build.make exercise6/CMakeFiles/exercise6_geneus.dir/build
+.PHONY : exercise6_geneus/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_generate_messages_lisp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_generate_messages_lisp.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+exercise6_generate_messages_lisp: exercise6/CMakeFiles/exercise6_generate_messages_lisp.dir/rule
+.PHONY : exercise6_generate_messages_lisp
+
+# fast build rule for target.
+exercise6_generate_messages_lisp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_generate_messages_lisp.dir/build.make exercise6/CMakeFiles/exercise6_generate_messages_lisp.dir/build
+.PHONY : exercise6_generate_messages_lisp/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_genlisp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_genlisp.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_genlisp.dir/rule
+
+# Convenience name for target.
+exercise6_genlisp: exercise6/CMakeFiles/exercise6_genlisp.dir/rule
+.PHONY : exercise6_genlisp
+
+# fast build rule for target.
+exercise6_genlisp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_genlisp.dir/build.make exercise6/CMakeFiles/exercise6_genlisp.dir/build
+.PHONY : exercise6_genlisp/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_generate_messages_nodejs.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_generate_messages_nodejs.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+exercise6_generate_messages_nodejs: exercise6/CMakeFiles/exercise6_generate_messages_nodejs.dir/rule
+.PHONY : exercise6_generate_messages_nodejs
+
+# fast build rule for target.
+exercise6_generate_messages_nodejs/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_generate_messages_nodejs.dir/build.make exercise6/CMakeFiles/exercise6_generate_messages_nodejs.dir/build
+.PHONY : exercise6_generate_messages_nodejs/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_gennodejs.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_gennodejs.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_gennodejs.dir/rule
+
+# Convenience name for target.
+exercise6_gennodejs: exercise6/CMakeFiles/exercise6_gennodejs.dir/rule
+.PHONY : exercise6_gennodejs
+
+# fast build rule for target.
+exercise6_gennodejs/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_gennodejs.dir/build.make exercise6/CMakeFiles/exercise6_gennodejs.dir/build
+.PHONY : exercise6_gennodejs/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_generate_messages_py.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_generate_messages_py.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_generate_messages_py.dir/rule
+
+# Convenience name for target.
+exercise6_generate_messages_py: exercise6/CMakeFiles/exercise6_generate_messages_py.dir/rule
+.PHONY : exercise6_generate_messages_py
+
+# fast build rule for target.
+exercise6_generate_messages_py/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_generate_messages_py.dir/build.make exercise6/CMakeFiles/exercise6_generate_messages_py.dir/build
+.PHONY : exercise6_generate_messages_py/fast
+
+# Convenience name for target.
+exercise6/CMakeFiles/exercise6_genpy.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/exercise6_genpy.dir/rule
+.PHONY : exercise6/CMakeFiles/exercise6_genpy.dir/rule
+
+# Convenience name for target.
+exercise6_genpy: exercise6/CMakeFiles/exercise6_genpy.dir/rule
+.PHONY : exercise6_genpy
+
+# fast build rule for target.
+exercise6_genpy/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f exercise6/CMakeFiles/exercise6_genpy.dir/build.make exercise6/CMakeFiles/exercise6_genpy.dir/build
+.PHONY : exercise6_genpy/fast
+
+# Convenience name for target.
 exercise6/CMakeFiles/example.dir/rule:
 	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exercise6/CMakeFiles/example.dir/rule
 .PHONY : exercise6/CMakeFiles/example.dir/rule
@@ -680,6 +848,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... _exercise6_generate_messages_check_deps_Cylinder"
+	@echo "... exercise6_gencpp"
+	@echo "... exercise6_generate_messages"
+	@echo "... exercise6_generate_messages_cpp"
+	@echo "... exercise6_generate_messages_eus"
+	@echo "... exercise6_generate_messages_lisp"
+	@echo "... exercise6_generate_messages_nodejs"
+	@echo "... exercise6_generate_messages_py"
+	@echo "... exercise6_geneus"
+	@echo "... exercise6_genlisp"
+	@echo "... exercise6_gennodejs"
+	@echo "... exercise6_genpy"
 	@echo "... nodelet_topic_tools_gencfg"
 	@echo "... pcl_msgs_generate_messages_cpp"
 	@echo "... pcl_msgs_generate_messages_eus"
