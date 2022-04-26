@@ -24,7 +24,7 @@ ros::Publisher pubm;
 
 tf2_ros::Buffer tf2_buffer;
 
-typedef pcl::PointXYZ PointT;
+typedef pcl::PointXYZRGB PointT;
 
 
 void 
@@ -55,8 +55,7 @@ cloud_cb (const pcl::PCLPointCloud2ConstPtr& cloud_blob)
   
   // Read in the cloud data
   pcl::fromPCLPointCloud2 (*cloud_blob, *cloud);
-  std::cerr << "PointCloud has: " << cloud->points.size () << " data points." << std::endl;
-
+ 
   // Build a passthrough filter to remove spurious NaNs
   pass.setInputCloud (cloud);
   pass.setFilterFieldName ("z");
