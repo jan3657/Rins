@@ -1,9 +1,12 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/lib/libyocs_semantic_navigator.pdb"
-  "/home/jan/ROS/devel/lib/libyocs_semantic_navigator.so"
+  "/home/jan/Rins/devel/lib/libyocs_semantic_navigator.pdb"
+  "/home/jan/Rins/devel/lib/libyocs_semantic_navigator.so"
   "CMakeFiles/yocs_semantic_navigator.dir/src/lib/navigation_handler.cpp.o"
+  "CMakeFiles/yocs_semantic_navigator.dir/src/lib/navigation_handler.cpp.o.d"
   "CMakeFiles/yocs_semantic_navigator.dir/src/lib/semantic_navigator.cpp.o"
+  "CMakeFiles/yocs_semantic_navigator.dir/src/lib/semantic_navigator.cpp.o.d"
   "CMakeFiles/yocs_semantic_navigator.dir/src/lib/utils.cpp.o"
+  "CMakeFiles/yocs_semantic_navigator.dir/src/lib/utils.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

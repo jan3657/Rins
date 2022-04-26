@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: kobuki_rapps
 Description: Description of kobuki_rapps

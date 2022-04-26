@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,43 +37,48 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/safe_execute_install.cmake")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/installspace/kobuki_testsuite.pc")
+  include("/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/safe_execute_install.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/installspace/kobuki_testsuite.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_testsuite/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/installspace/kobuki_testsuiteConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/installspace/kobuki_testsuiteConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/installspace/kobuki_testsuiteConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_testsuite/catkin_generated/installspace/kobuki_testsuiteConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_testsuite" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_testsuite" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/kobuki_testsuite" TYPE PROGRAM FILES
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/inf_rotation.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_analog_input.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_battery_voltage.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_events.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_gyro.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_led_array.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_rotation.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_sounds.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/scan_angle.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_battery"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_digital_output.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_external_power.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_input.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_output.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_safewandering.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_translation.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/inf_rotation.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_analog_input.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_battery_voltage.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_events.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_gyro.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_led_array.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_rotation.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_sounds.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/scan_angle.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_battery"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_digital_output.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_external_power.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_input.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_output.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_safewandering.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_testsuite/scripts/test_translation.py"
     )
 endif()
 

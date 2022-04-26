@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,19 +37,24 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/catkin_generated/installspace/kobuki_controller_tutorial.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/catkin_generated/installspace/kobuki_controller_tutorial.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_controller_tutorial/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/catkin_generated/installspace/kobuki_controller_tutorialConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/catkin_generated/installspace/kobuki_controller_tutorialConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/catkin_generated/installspace/kobuki_controller_tutorialConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/catkin_generated/installspace/kobuki_controller_tutorialConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_controller_tutorial" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_controller_tutorial" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,7 +64,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbump_blink_controller_nodelet.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/ROS/devel/lib/libbump_blink_controller_nodelet.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/Rins/devel/lib/libbump_blink_controller_nodelet.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbump_blink_controller_nodelet.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbump_blink_controller_nodelet.so")
     file(RPATH_CHANGE
@@ -76,14 +81,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kobuki_controller_tutorial" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/include/kobuki_controller_tutorial/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kobuki_controller_tutorial" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/include/kobuki_controller_tutorial/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_controller_tutorial" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/plugins")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_controller_tutorial" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/plugins")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_controller_tutorial" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_controller_tutorial" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_controller_tutorial/launch")
 endif()
 

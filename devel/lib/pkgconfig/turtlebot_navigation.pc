@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: turtlebot_navigation
 Description: Description of turtlebot_navigation

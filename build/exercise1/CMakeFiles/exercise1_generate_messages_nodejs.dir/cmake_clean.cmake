@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/share/gennodejs/ros/exercise1/msg/stringInt.js"
-  "/home/jan/ROS/devel/share/gennodejs/ros/exercise1/srv/SumOfArray.js"
+  "/home/jan/Rins/devel/share/gennodejs/ros/exercise1/msg/stringInt.js"
+  "/home/jan/Rins/devel/share/gennodejs/ros/exercise1/srv/SumOfArray.js"
   "CMakeFiles/exercise1_generate_messages_nodejs"
 )
 

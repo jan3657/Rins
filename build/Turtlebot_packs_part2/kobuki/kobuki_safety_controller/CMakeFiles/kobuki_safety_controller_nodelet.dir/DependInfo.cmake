@@ -1,28 +1,14 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/src/nodelet.cpp" "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/CMakeFiles/kobuki_safety_controller_nodelet.dir/src/nodelet.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "ROSCONSOLE_BACKEND_LOG4CXX"
-  "ROS_BUILD_SHARED_LIBS=1"
-  "ROS_PACKAGE_NAME=\"kobuki_safety_controller\""
-  "kobuki_safety_controller_nodelet_EXPORTS"
   )
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/include"
-  "/home/jan/ROS/devel/include"
-  "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/include"
-  "/opt/ros/noetic/include"
-  "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/src/nodelet.cpp" "Turtlebot_packs_part2/kobuki/kobuki_safety_controller/CMakeFiles/kobuki_safety_controller_nodelet.dir/src/nodelet.cpp.o" "gcc" "Turtlebot_packs_part2/kobuki/kobuki_safety_controller/CMakeFiles/kobuki_safety_controller_nodelet.dir/src/nodelet.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,89 +37,94 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/msg" TYPE FILE FILES
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/BumperEvent.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/CliffEvent.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/DigitalOutput.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/ExternalPower.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/Led.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/PowerSystemEvent.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/SensorState.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/VersionInfo.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/ControllerInfo.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/ButtonEvent.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/DigitalInputEvent.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/DockInfraRed.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/KeyboardInput.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/MotorPower.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/RobotStateEvent.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/Sound.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/ScanAngle.msg"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/msg/WheelDropEvent.msg"
-    )
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/action" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/action/AutoDocking.action")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/msg" TYPE FILE FILES
-    "/home/jan/ROS/devel/share/kobuki_msgs/msg/AutoDockingAction.msg"
-    "/home/jan/ROS/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg"
-    "/home/jan/ROS/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg"
-    "/home/jan/ROS/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
-    "/home/jan/ROS/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg"
-    "/home/jan/ROS/devel/share/kobuki_msgs/msg/AutoDockingResult.msg"
-    "/home/jan/ROS/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/BumperEvent.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/CliffEvent.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/DigitalOutput.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/ExternalPower.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/Led.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/PowerSystemEvent.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/SensorState.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/VersionInfo.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/ControllerInfo.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/ButtonEvent.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/DigitalInputEvent.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/DockInfraRed.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/KeyboardInput.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/MotorPower.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/RobotStateEvent.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/Sound.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/ScanAngle.msg"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/msg/WheelDropEvent.msg"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/cmake" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgs-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/action" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/action/AutoDocking.action")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jan/ROS/devel/include/kobuki_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/msg" TYPE FILE FILES
+    "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg"
+    "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg"
+    "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg"
+    "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
+    "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg"
+    "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg"
+    "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/jan/ROS/devel/share/roseus/ros/kobuki_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/cmake" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgs-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/jan/ROS/devel/share/common-lisp/ros/kobuki_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jan/Rins/devel/include/kobuki_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/jan/ROS/devel/share/gennodejs/ros/kobuki_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/jan/Rins/devel/share/roseus/ros/kobuki_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/jan/ROS/devel/lib/python3/dist-packages/kobuki_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/jan/Rins/devel/share/common-lisp/ros/kobuki_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/jan/ROS/devel/lib/python3/dist-packages/kobuki_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/jan/Rins/devel/share/gennodejs/ros/kobuki_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgs.pc")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/jan/Rins/devel/lib/python3/dist-packages/kobuki_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/cmake" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgs-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/jan/Rins/devel/lib/python3/dist-packages/kobuki_msgs")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgs.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/cmake" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgs-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgsConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgsConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgsConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_msgs/catkin_generated/installspace/kobuki_msgsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_msgs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_msgs" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_msgs/package.xml")
 endif()
 

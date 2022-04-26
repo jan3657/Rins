@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "ecl_threads;geometry_msgs;nodelet;pluginlib;sensor_msgs;std_msgs;roscpp;yocs_controllers".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lyocs_safety_controller_nodelet".split(';') if "-lyocs_safety_controller_nodelet" != "" else []
 PROJECT_NAME = "yocs_safety_controller"
-PROJECT_SPACE_DIR = "/home/jan/ROS/install"
+PROJECT_SPACE_DIR = "/home/jan/Rins/install"
 PROJECT_VERSION = "0.12.1"

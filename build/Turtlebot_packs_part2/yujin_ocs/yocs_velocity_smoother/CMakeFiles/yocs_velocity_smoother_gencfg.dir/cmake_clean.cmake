@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/include/yocs_velocity_smoother/paramsConfig.h"
-  "/home/jan/ROS/devel/lib/python3/dist-packages/yocs_velocity_smoother/cfg/paramsConfig.py"
-  "/home/jan/ROS/devel/share/yocs_velocity_smoother/docs/paramsConfig-usage.dox"
-  "/home/jan/ROS/devel/share/yocs_velocity_smoother/docs/paramsConfig.dox"
-  "/home/jan/ROS/devel/share/yocs_velocity_smoother/docs/paramsConfig.wikidoc"
+  "/home/jan/Rins/devel/include/yocs_velocity_smoother/paramsConfig.h"
+  "/home/jan/Rins/devel/lib/python3/dist-packages/yocs_velocity_smoother/cfg/paramsConfig.py"
+  "/home/jan/Rins/devel/share/yocs_velocity_smoother/docs/paramsConfig-usage.dox"
+  "/home/jan/Rins/devel/share/yocs_velocity_smoother/docs/paramsConfig.dox"
+  "/home/jan/Rins/devel/share/yocs_velocity_smoother/docs/paramsConfig.wikidoc"
   "CMakeFiles/yocs_velocity_smoother_gencfg"
 )
 

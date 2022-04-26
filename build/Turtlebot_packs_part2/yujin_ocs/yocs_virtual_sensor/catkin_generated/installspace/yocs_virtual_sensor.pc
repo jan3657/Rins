@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: yocs_virtual_sensor
 Description: Description of yocs_virtual_sensor

@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,25 +37,30 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/catkin_generated/installspace/yocs_joyop.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/catkin_generated/installspace/yocs_joyop.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_joyop/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/catkin_generated/installspace/yocs_joyopConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/catkin_generated/installspace/yocs_joyopConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/catkin_generated/installspace/yocs_joyopConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/catkin_generated/installspace/yocs_joyopConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_joyop" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_joyop" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yocs_joyop" TYPE PROGRAM FILES
-    "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/scripts/magic_button_relay.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/scripts/reconfigure_joystick.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/scripts/magic_button_relay.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/scripts/reconfigure_joystick.py"
     )
 endif()
 
@@ -66,7 +71,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_joyop/joyop"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yocs_joyop" TYPE EXECUTABLE FILES "/home/jan/ROS/devel/lib/yocs_joyop/joyop")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yocs_joyop" TYPE EXECUTABLE FILES "/home/jan/Rins/devel/lib/yocs_joyop/joyop")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_joyop/joyop" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_joyop/joyop")
     file(RPATH_CHANGE
@@ -80,6 +85,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_joyop" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_joyop" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_joyop/launch")
 endif()
 

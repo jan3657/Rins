@@ -2,7 +2,7 @@
 DEVELSPACE = False
 INSTALLSPACE = True
 
-CATKIN_DEVEL_PREFIX = '/home/jan/ROS/devel'
+CATKIN_DEVEL_PREFIX = '/home/jan/Rins/devel'
 
 CATKIN_GLOBAL_BIN_DESTINATION = 'bin'
 CATKIN_GLOBAL_ETC_DESTINATION = 'etc'
@@ -20,14 +20,14 @@ CATKIN_PACKAGE_LIBEXEC_DESTINATION = 'lib/turtlebot_stdr'
 CATKIN_PACKAGE_PYTHON_DESTINATION = 'lib/python3/dist-packages/turtlebot_stdr'
 CATKIN_PACKAGE_SHARE_DESTINATION = 'share/turtlebot_stdr'
 
-CMAKE_BINARY_DIR = '/home/jan/ROS/build'
-CMAKE_CURRENT_BINARY_DIR = '/home/jan/ROS/build/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
-CMAKE_CURRENT_SOURCE_DIR = '/home/jan/ROS/src/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
-CMAKE_INSTALL_PREFIX = '/home/jan/ROS/install'
-CMAKE_SOURCE_DIR = '/home/jan/ROS/src'
+CMAKE_BINARY_DIR = '/home/jan/Rins/build'
+CMAKE_CURRENT_BINARY_DIR = '/home/jan/Rins/build/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
+CMAKE_CURRENT_SOURCE_DIR = '/home/jan/Rins/src/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
+CMAKE_INSTALL_PREFIX = '/home/jan/Rins/install'
+CMAKE_SOURCE_DIR = '/home/jan/Rins/src'
 
 PROJECT_NAME = 'turtlebot_stdr'
-PROJECT_BINARY_DIR = '/home/jan/ROS/build/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
-PROJECT_SOURCE_DIR = '/home/jan/ROS/src/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
+PROJECT_BINARY_DIR = '/home/jan/Rins/build/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
+PROJECT_SOURCE_DIR = '/home/jan/Rins/src/Turtlebot_packs_part1/turtlebot_simulator/turtlebot_stdr'
 
 PYTHON_EXECUTABLE = '/usr/bin/python3'

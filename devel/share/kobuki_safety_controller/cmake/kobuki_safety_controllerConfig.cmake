@@ -67,14 +67,14 @@ set(kobuki_safety_controller_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(kobuki_safety_controller_SOURCE_PREFIX /home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller)
-  set(kobuki_safety_controller_DEVEL_PREFIX /home/jan/ROS/devel)
+  set(kobuki_safety_controller_SOURCE_PREFIX /home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller)
+  set(kobuki_safety_controller_DEVEL_PREFIX /home/jan/Rins/devel)
   set(kobuki_safety_controller_INSTALL_PREFIX "")
   set(kobuki_safety_controller_PREFIX ${kobuki_safety_controller_DEVEL_PREFIX})
 else()
   set(kobuki_safety_controller_SOURCE_PREFIX "")
   set(kobuki_safety_controller_DEVEL_PREFIX "")
-  set(kobuki_safety_controller_INSTALL_PREFIX /home/jan/ROS/install)
+  set(kobuki_safety_controller_INSTALL_PREFIX /home/jan/Rins/install)
   set(kobuki_safety_controller_PREFIX ${kobuki_safety_controller_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(kobuki_safety_controller_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/include " STREQUAL " ")
+if(NOT "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/include " STREQUAL " ")
   set(kobuki_safety_controller_INCLUDE_DIRS "")
-  set(_include_dirs "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/include")
+  set(_include_dirs "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/include")
   if(NOT "https://github.com/yujinrobot/kobuki/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/yujinrobot/kobuki/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/kobuki_safety_controller " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/
         message(FATAL_ERROR "Project 'kobuki_safety_controller' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'kobuki_safety_controller' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'kobuki_safety_controller' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_safety_controller/${idir}'.  ${_report}")
     endif()
     _list_append_unique(kobuki_safety_controller_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jan/ROS/devel/lib;/home/jan/ROS/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jan/Rins/devel/lib;/home/jan/Rins/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

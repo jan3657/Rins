@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: turtlebot_rviz_launchers
 Description: Description of turtlebot_rviz_launchers

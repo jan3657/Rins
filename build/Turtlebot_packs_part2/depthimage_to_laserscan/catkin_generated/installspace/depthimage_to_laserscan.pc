@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: depthimage_to_laserscan
 Description: Description of depthimage_to_laserscan

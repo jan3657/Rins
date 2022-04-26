@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: turtlebot_interactive_markers
 Description: Description of turtlebot_interactive_markers

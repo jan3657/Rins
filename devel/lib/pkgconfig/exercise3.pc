@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: exercise3
 Description: Description of exercise3

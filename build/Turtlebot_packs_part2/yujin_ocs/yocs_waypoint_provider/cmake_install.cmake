@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,19 +37,24 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/catkin_generated/installspace/yocs_waypoint_provider.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/catkin_generated/installspace/yocs_waypoint_provider.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_waypoint_provider/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/catkin_generated/installspace/yocs_waypoint_providerConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/catkin_generated/installspace/yocs_waypoint_providerConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/catkin_generated/installspace/yocs_waypoint_providerConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/catkin_generated/installspace/yocs_waypoint_providerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_waypoint_provider" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_waypoint_provider" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,7 +64,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libwaypoint_provider_lib.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/ROS/devel/lib/libwaypoint_provider_lib.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/Rins/devel/lib/libwaypoint_provider_lib.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libwaypoint_provider_lib.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libwaypoint_provider_lib.so")
     file(RPATH_CHANGE
@@ -82,7 +87,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libwaypoint_provider_yaml_parser_lib.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/ROS/devel/lib/libwaypoint_provider_yaml_parser_lib.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/Rins/devel/lib/libwaypoint_provider_yaml_parser_lib.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libwaypoint_provider_yaml_parser_lib.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libwaypoint_provider_yaml_parser_lib.so")
     file(RPATH_CHANGE
@@ -105,12 +110,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_waypoint_provider/waypoint_provider"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yocs_waypoint_provider" TYPE EXECUTABLE FILES "/home/jan/ROS/devel/lib/yocs_waypoint_provider/waypoint_provider")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yocs_waypoint_provider" TYPE EXECUTABLE FILES "/home/jan/Rins/devel/lib/yocs_waypoint_provider/waypoint_provider")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_waypoint_provider/waypoint_provider" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_waypoint_provider/waypoint_provider")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_waypoint_provider/waypoint_provider"
-         OLD_RPATH "/home/jan/ROS/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/jan/Rins/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/yocs_waypoint_provider/waypoint_provider")
@@ -119,10 +124,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_waypoint_provider" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_waypoint_provider" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_waypoint_provider" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/resources")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_waypoint_provider" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_waypoint_provider/resources")
 endif()
 

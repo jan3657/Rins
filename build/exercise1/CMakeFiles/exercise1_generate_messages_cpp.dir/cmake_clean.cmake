@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/include/exercise1/SumOfArray.h"
-  "/home/jan/ROS/devel/include/exercise1/stringInt.h"
+  "/home/jan/Rins/devel/include/exercise1/SumOfArray.h"
+  "/home/jan/Rins/devel/include/exercise1/stringInt.h"
   "CMakeFiles/exercise1_generate_messages_cpp"
 )
 

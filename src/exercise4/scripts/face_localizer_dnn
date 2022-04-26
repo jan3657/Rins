@@ -10,9 +10,10 @@ import tf2_geometry_msgs
 import tf2_ros
 import face_recognition
 import copy
+import math
+from matplotlib import pyplot as plt
 
 from os.path import dirname, join
-
 
 from geometry_msgs.msg import PoseStamped, Quaternion, Point, PoseWithCovarianceStamped
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionResult
@@ -23,7 +24,8 @@ from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
 from actionlib_msgs.msg import GoalID
 from nav_msgs.msg import Odometry
-PI = 3.1415926535897
+from tf.transformations import euler_from_quaternion, quaternion_from_euler
+
 
 class face_localizer:
     def __init__(self):
@@ -77,6 +79,8 @@ class face_localizer:
         self.numb_of_faces = 3
         self.botLocationX = 0.0
         self.botLocationY = 0.0
+        self.quarternion = [None] * 4
+        #self.number_rotations = 0
 
 
     def get_pose(self,coords,dist,stamp):
@@ -219,7 +223,6 @@ class face_localizer:
                             self.marker_num += 1
                             face = Face(pose, face_encoding, self.marker_num)
                             self.faces.append(face)
-                            #self.faces.append(Face(pose, face_encoding, self.marker_num))
                             self.marker_array.markers.append(face.to_marker())
                             self.state = "face_found"
         
@@ -240,14 +243,15 @@ class face_localizer:
         
         image_viz = np.array(image_1, dtype=np.uint8)
 
-        #cv2.imshow("Depth window", image_viz)
-        #cv2.waitKey(1)
+        cv2.imshow("Depth window", image_viz)
+        cv2.waitKey(1)
 
-        #plt.imshow(depth_image)
-        #plt.show()
+        plt.imshow(depth_image)
+        plt.show()
 
 
     def result_sub_callback(self, data):
+    
         res_status = data.status.status
         #print("Res status: ", res_status)
         #print("Self state: ", self.state)
@@ -258,9 +262,13 @@ class face_localizer:
                 #self.state = "rotate"
 
         #elif self.state == "rotate":
-            ##if res_status == 3 or res_status == 4:
-        #    rospy.sleep(3)
-        #    self.state = "get_next_waypoint"
+        #    if res_status == 3: #or res_status == 4:
+            
+        #        if self.number_rotations < 2:
+        #            self.state = "rotate"
+        #        else:
+        #            self.number_rotations = 0
+        #            self.state = "get_next_waypoint"
 
         elif self.state == "face_found":
             #print(res_status)
@@ -276,8 +284,16 @@ class face_localizer:
                 self.state = "get_next_waypoint"
 
 
-    def amcl_callback(self, msg):    
-        self.botLocationX,self.botLocationY = msg.pose.pose.position.x, msg.pose.pose.position.y
+    def amcl_callback(self, msg):  
+      
+        try:
+            self.botLocationX,self.botLocationY = msg.pose.pose.position.x, msg.pose.pose.position.y
+            self.quarternion[0] = msg.pose.pose.orientation.x
+            self.quarternion[1] = msg.pose.pose.orientation.y
+            self.quarternion[2] = msg.pose.pose.orientation.z
+            self.quarternion[3] = msg.pose.pose.orientation.w
+        except:
+            print("")
 
 
     def move_to_next_waypoint(self,x_goal,y_goal, next_state):
@@ -307,12 +323,46 @@ class face_localizer:
         client.send_goal(goal)
 
 
-    def mover(self):
-        pointsX = [-1.0010287761688232,-1.0939724445343018,-0.1617065668106079,1.1553516387939453,-0.06641178578138351,2.8884198665618896,1.2774776220321655,1.9491162300109863,-0.47786661982536316]
-        pointsY = [1.98361825942993166,0.3391437530517578,0.3451138436794281,-1.0127415657043457,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.9044089317321777,2.689185857772827]
+    def rotation(self, pos_x, pos_y, quarternion):
         
-        # , 0.9174761772155762
-        # , 2.71067476272583
+        print("Rotating")
+        self.number_rotations += 1
+        
+        rz = euler_from_quaternion(
+            [
+                quarternion[0],
+                quarternion[1],
+                quarternion[2],
+                quarternion[3],
+            ]
+        )[2]
+
+        rz += math.pi / 2
+        
+        quarternion = quaternion_from_euler(0, 0, rz)
+        
+        #print(quarternion)
+        
+        client = actionlib.SimpleActionClient('move_base',MoveBaseAction)
+        client.wait_for_server()
+        msg = PoseStamped()
+
+        goal = MoveBaseGoal()
+        goal.target_pose.header.frame_id = "map"
+        goal.target_pose.header.stamp = rospy.Time.now()
+        goal.target_pose.pose.position.x = pos_x
+        goal.target_pose.pose.position.y = pos_y
+        goal.target_pose.pose.orientation.x = quarternion[0]
+        goal.target_pose.pose.orientation.y = quarternion[1]
+        goal.target_pose.pose.orientation.z = quarternion[2]
+        goal.target_pose.pose.orientation.w = quarternion[3]
+
+        client.send_goal(goal)
+        
+
+    def mover(self):
+        pointsX = [-1.0939724445343018,-0.1617065668106079,1.1553516387939453,-0.06641178578138351,2.8884198665618896,1.2774776220321655,1.9491162300109863,-0.47786661982536316]
+        pointsY = [0.3391437530517578,0.3451138436794281,-1.0127415657043457,-0.995416522026062,0.04714234545826912,0.9301703572273254,2.9044089317321777,2.689185857772827]
         
         i = 0
         next_goal = None
@@ -320,9 +370,7 @@ class face_localizer:
         rate = rospy.Rate(1)
 
         while not rospy.is_shutdown():
-            #print(self.state)
-            
-            #elif(self.state == "get_next_waypoint" and len(self.faces) != numb_of_faces):
+        
             if(self.state == "get_next_waypoint"):
                 
                 if len(self.faces) == self.numb_of_faces:
@@ -334,40 +382,29 @@ class face_localizer:
                     if i == len(pointsX):
                         i = 0
                     
-                    #print(pointsX[i], " ", pointsY[i])
                     self.move_to_next_waypoint(pointsX[i], pointsY[i], "moving")
                     i += 1
 
             #elif self.state == "rotate":
+            
+                #print("Quarterion: ", self.quarternion)
+                #print("Bot location: ", self.botLocationX, self.botLocationY)
                 
-                #print("im here in rot")
-            #    twist = Twist()
+                #self.rotation(self.botLocationX, self.botLocationY, self.quarternion)
                 
-            #    twist.linear.x = 0
-            #    twist.linear.y = 0
-            #    twist.angular.z = 1
-            #    self.rotate.publish(twist)
-                
-            #    self.state = "get_next_waypoint"
+                #self.state = "get_next_waypoint"
             
             elif self.state == "face_found":
                 
-                #print(GoalID())
                 self.cancel_goal_publisher.publish(GoalID())
                  
             elif self.state == "approach_face":
             
-                #print(self.marker_num)
-                #rospy.sleep(5)
-                
                 faceX = self.faces[-1].pose.position.x                 
-                faceY = self.faces[-1].pose.position.y                 
-                #botX = self.odom_sub.pose.position.x                 
-                #botY = self.odom_sub.pose.position.y                 
-                #print("Obraz : ",faceX ," " ,faceY ,"\n Robot:", self.botLocationX," ",self.botLocationY )
-                #,"\n Robot:", botX," ",botY )
+                faceY = self.faces[-1].pose.position.y                   
+                #print("Obraz : ",faceX ," " ,faceY ,"\n Robot:", self.botLocationX," ",self.botLocationY)
+                
                 self.move_to_next_waypoint(self.botLocationX, self.botLocationY, "approach_face")
-                #self.state = "greet_face"
             
             elif self.state == "greet_face":
             

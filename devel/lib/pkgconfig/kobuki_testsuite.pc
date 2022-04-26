@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: kobuki_testsuite
 Description: Description of kobuki_testsuite

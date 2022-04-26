@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/share/common-lisp/ros/exercise2/msg/Movement.lisp"
-  "/home/jan/ROS/devel/share/common-lisp/ros/exercise2/srv/MovementType.lisp"
+  "/home/jan/Rins/devel/share/common-lisp/ros/exercise2/msg/Movement.lisp"
+  "/home/jan/Rins/devel/share/common-lisp/ros/exercise2/srv/MovementType.lisp"
   "CMakeFiles/exercise2_generate_messages_lisp"
 )
 

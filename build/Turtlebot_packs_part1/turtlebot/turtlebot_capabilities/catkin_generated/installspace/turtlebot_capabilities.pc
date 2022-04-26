@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: turtlebot_capabilities
 Description: Description of turtlebot_capabilities

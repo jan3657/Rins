@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_navigator
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_navigator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,23 +37,28 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/safe_execute_install.cmake")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/installspace/yocs_navigator.pc")
+  include("/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/safe_execute_install.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/installspace/yocs_navigator.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_navigator/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/installspace/yocs_navigatorConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/installspace/yocs_navigatorConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/installspace/yocs_navigatorConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/catkin_generated/installspace/yocs_navigatorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_navigator" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_navigator" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -63,12 +68,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_basic_move_controller.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/ROS/devel/lib/libyocs_basic_move_controller.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/Rins/devel/lib/libyocs_basic_move_controller.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_basic_move_controller.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_basic_move_controller.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_basic_move_controller.so"
-         OLD_RPATH "/home/jan/ROS/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/jan/Rins/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_basic_move_controller.so")
@@ -86,12 +91,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_semantic_navigator.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/ROS/devel/lib/libyocs_semantic_navigator.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jan/Rins/devel/lib/libyocs_semantic_navigator.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_semantic_navigator.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_semantic_navigator.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_semantic_navigator.so"
-         OLD_RPATH "/home/jan/ROS/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/jan/Rins/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyocs_semantic_navigator.so")
@@ -103,6 +108,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yocs_navigator" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/include/yocs_navigator/" REGEX "/\\.svn$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yocs_navigator" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_navigator/include/yocs_navigator/" REGEX "/\\.svn$" EXCLUDE)
 endif()
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/exercise1
+# Install script for directory: /home/jan/Rins/src/exercise1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,62 +37,67 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/msg" TYPE FILE FILES "/home/jan/ROS/src/exercise1/msg/stringInt.msg")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/srv" TYPE FILE FILES "/home/jan/ROS/src/exercise1/srv/SumOfArray.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/msg" TYPE FILE FILES "/home/jan/Rins/src/exercise1/msg/stringInt.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/cmake" TYPE FILE FILES "/home/jan/ROS/build/exercise1/catkin_generated/installspace/exercise1-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/srv" TYPE FILE FILES "/home/jan/Rins/src/exercise1/srv/SumOfArray.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jan/ROS/devel/include/exercise1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/cmake" TYPE FILE FILES "/home/jan/Rins/build/exercise1/catkin_generated/installspace/exercise1-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/jan/ROS/devel/share/roseus/ros/exercise1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jan/Rins/devel/include/exercise1")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/jan/ROS/devel/share/common-lisp/ros/exercise1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/jan/Rins/devel/share/roseus/ros/exercise1")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/jan/ROS/devel/share/gennodejs/ros/exercise1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/jan/Rins/devel/share/common-lisp/ros/exercise1")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/jan/ROS/devel/lib/python3/dist-packages/exercise1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/jan/Rins/devel/share/gennodejs/ros/exercise1")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/jan/ROS/devel/lib/python3/dist-packages/exercise1")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/jan/Rins/devel/lib/python3/dist-packages/exercise1")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/exercise1/catkin_generated/installspace/exercise1.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/jan/Rins/devel/lib/python3/dist-packages/exercise1")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/cmake" TYPE FILE FILES "/home/jan/ROS/build/exercise1/catkin_generated/installspace/exercise1-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/exercise1/catkin_generated/installspace/exercise1.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/cmake" TYPE FILE FILES "/home/jan/Rins/build/exercise1/catkin_generated/installspace/exercise1-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/exercise1/catkin_generated/installspace/exercise1Config.cmake"
-    "/home/jan/ROS/build/exercise1/catkin_generated/installspace/exercise1Config-version.cmake"
+    "/home/jan/Rins/build/exercise1/catkin_generated/installspace/exercise1Config.cmake"
+    "/home/jan/Rins/build/exercise1/catkin_generated/installspace/exercise1Config-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1" TYPE FILE FILES "/home/jan/ROS/src/exercise1/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exercise1" TYPE FILE FILES "/home/jan/Rins/src/exercise1/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/exercise1" TYPE PROGRAM FILES "/home/jan/ROS/build/exercise1/catkin_generated/installspace/array_node.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/exercise1" TYPE PROGRAM FILES "/home/jan/Rins/build/exercise1/catkin_generated/installspace/array_node.py")
 endif()
 

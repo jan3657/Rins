@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: yocs_localization_manager
 Description: Description of yocs_localization_manager

@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: yocs_waypoint_provider
 Description: Description of yocs_waypoint_provider

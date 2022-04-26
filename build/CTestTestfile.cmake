@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/jan/ROS/src
-# Build directory: /home/jan/ROS/build
+# Source directory: /home/jan/Rins/src
+# Build directory: /home/jan/Rins/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -30,7 +30,9 @@ subdirs("Turtlebot_packs_part2/kobuki/kobuki_auto_docking")
 subdirs("Turtlebot_packs_part2/depthimage_to_laserscan")
 subdirs("Turtlebot_packs_part2/kobuki/kobuki_bumper2pc")
 subdirs("exercise3")
+subdirs("exercise4")
 subdirs("Turtlebot_packs_part2/kobuki_desktop/kobuki_dashboard")
+subdirs("exercise6")
 subdirs("Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers")
 subdirs("Turtlebot_packs_part1/turtlebot_navigation")
 subdirs("Turtlebot_packs_part1/turtlebot/turtlebot_teleop")

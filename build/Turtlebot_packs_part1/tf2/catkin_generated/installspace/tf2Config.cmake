@@ -67,14 +67,14 @@ set(tf2_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(tf2_SOURCE_PREFIX /home/jan/ROS/src/Turtlebot_packs_part1/tf2)
-  set(tf2_DEVEL_PREFIX /home/jan/ROS/devel)
+  set(tf2_SOURCE_PREFIX /home/jan/Rins/src/Turtlebot_packs_part1/tf2)
+  set(tf2_DEVEL_PREFIX /home/jan/Rins/devel)
   set(tf2_INSTALL_PREFIX "")
   set(tf2_PREFIX ${tf2_DEVEL_PREFIX})
 else()
   set(tf2_SOURCE_PREFIX "")
   set(tf2_DEVEL_PREFIX "")
-  set(tf2_INSTALL_PREFIX /home/jan/ROS/install)
+  set(tf2_INSTALL_PREFIX /home/jan/Rins/install)
   set(tf2_PREFIX ${tf2_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jan/ROS/install/lib;/home/jan/ROS/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jan/Rins/install/lib;/home/jan/Rins/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: yocs_keyop
 Description: Description of yocs_keyop

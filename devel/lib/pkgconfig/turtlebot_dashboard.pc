@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: turtlebot_dashboard
 Description: Description of turtlebot_dashboard

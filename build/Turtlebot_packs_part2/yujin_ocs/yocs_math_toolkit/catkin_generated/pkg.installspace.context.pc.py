@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "ecl_build;ecl_config;ecl_exceptions;ecl_formatters;ecl_linear_algebra;geometry_msgs;roscpp;tf".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lyocs_math_toolkit".split(';') if "-lyocs_math_toolkit" != "" else []
 PROJECT_NAME = "yocs_math_toolkit"
-PROJECT_SPACE_DIR = "/home/jan/ROS/install"
+PROJECT_SPACE_DIR = "/home/jan/Rins/install"
 PROJECT_VERSION = "0.12.1"

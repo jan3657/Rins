@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,51 +37,56 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_node/catkin_generated/installspace/kobuki_node.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_node/catkin_generated/installspace/kobuki_node.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_node/catkin_generated/installspace/kobuki_nodeConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_node/catkin_generated/installspace/kobuki_nodeConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_node/catkin_generated/installspace/kobuki_nodeConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_node/catkin_generated/installspace/kobuki_nodeConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kobuki_node" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/include/kobuki_node/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kobuki_node" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/include/kobuki_node/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/plugins")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/plugins")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/param")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/param")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/image")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_node" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/image")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/kobuki_node" TYPE PROGRAM FILES
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/scripts/getOdom2D.py"
-    "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_node/scripts/getYaw.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/scripts/getOdom2D.py"
+    "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_node/scripts/getYaw.py"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jan/ROS/build/Turtlebot_packs_part2/kobuki/kobuki_node/src/cmake_install.cmake")
+  include("/home/jan/Rins/build/Turtlebot_packs_part2/kobuki/kobuki_node/src/cmake_install.cmake")
 
 endif()
 

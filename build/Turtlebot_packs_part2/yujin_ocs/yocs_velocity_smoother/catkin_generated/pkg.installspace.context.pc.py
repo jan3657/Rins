@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "roscpp;pluginlib;nodelet;ecl_threads;dynamic_reconfigure;geometry_msgs;nav_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lyocs_velocity_smoother_nodelet".split(';') if "-lyocs_velocity_smoother_nodelet" != "" else []
 PROJECT_NAME = "yocs_velocity_smoother"
-PROJECT_SPACE_DIR = "/home/jan/ROS/install"
+PROJECT_SPACE_DIR = "/home/jan/Rins/install"
 PROJECT_VERSION = "0.12.1"

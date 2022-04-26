@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/share/common-lisp/ros/exercise1/msg/stringInt.lisp"
-  "/home/jan/ROS/devel/share/common-lisp/ros/exercise1/srv/SumOfArray.lisp"
+  "/home/jan/Rins/devel/share/common-lisp/ros/exercise1/msg/stringInt.lisp"
+  "/home/jan/Rins/devel/share/common-lisp/ros/exercise1/srv/SumOfArray.lisp"
   "CMakeFiles/exercise1_generate_messages_lisp"
 )
 

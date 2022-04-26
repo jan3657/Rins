@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: kobuki_gazebo
 Description: Description of kobuki_gazebo

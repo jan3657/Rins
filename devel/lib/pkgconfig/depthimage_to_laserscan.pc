@@ -1,8 +1,8 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: depthimage_to_laserscan
 Description: Description of depthimage_to_laserscan
 Version: 1.0.8
-Cflags: -I/home/jan/ROS/devel/include -I/home/jan/ROS/src/Turtlebot_packs_part2/depthimage_to_laserscan/include
+Cflags: -I/home/jan/Rins/devel/include -I/home/jan/Rins/src/Turtlebot_packs_part2/depthimage_to_laserscan/include
 Libs: -L${prefix}/lib -lDepthImageToLaserScan -lDepthImageToLaserScanROS -lDepthImageToLaserScanNodelet
 Requires: dynamic_reconfigure image_geometry image_transport nodelet roscpp sensor_msgs

@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/include/depthimage_to_laserscan/DepthConfig.h"
-  "/home/jan/ROS/devel/lib/python3/dist-packages/depthimage_to_laserscan/cfg/DepthConfig.py"
-  "/home/jan/ROS/devel/share/depthimage_to_laserscan/docs/DepthConfig-usage.dox"
-  "/home/jan/ROS/devel/share/depthimage_to_laserscan/docs/DepthConfig.dox"
-  "/home/jan/ROS/devel/share/depthimage_to_laserscan/docs/DepthConfig.wikidoc"
+  "/home/jan/Rins/devel/include/depthimage_to_laserscan/DepthConfig.h"
+  "/home/jan/Rins/devel/lib/python3/dist-packages/depthimage_to_laserscan/cfg/DepthConfig.py"
+  "/home/jan/Rins/devel/share/depthimage_to_laserscan/docs/DepthConfig-usage.dox"
+  "/home/jan/Rins/devel/share/depthimage_to_laserscan/docs/DepthConfig.dox"
+  "/home/jan/Rins/devel/share/depthimage_to_laserscan/docs/DepthConfig.wikidoc"
   "CMakeFiles/depthimage_to_laserscan_gencfg"
 )
 

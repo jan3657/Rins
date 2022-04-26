@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "dynamic_reconfigure;image_geometry;image_transport;nodelet;roscpp;sensor_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lDepthImageToLaserScan;-lDepthImageToLaserScanROS;-lDepthImageToLaserScanNodelet".split(';') if "-lDepthImageToLaserScan;-lDepthImageToLaserScanROS;-lDepthImageToLaserScanNodelet" != "" else []
 PROJECT_NAME = "depthimage_to_laserscan"
-PROJECT_SPACE_DIR = "/home/jan/ROS/install"
+PROJECT_SPACE_DIR = "/home/jan/Rins/install"
 PROJECT_VERSION = "1.0.8"

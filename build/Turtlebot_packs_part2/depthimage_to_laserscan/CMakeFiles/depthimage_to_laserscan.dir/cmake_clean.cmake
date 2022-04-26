@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/lib/depthimage_to_laserscan/depthimage_to_laserscan"
-  "/home/jan/ROS/devel/lib/depthimage_to_laserscan/depthimage_to_laserscan.pdb"
+  "/home/jan/Rins/devel/lib/depthimage_to_laserscan/depthimage_to_laserscan"
+  "/home/jan/Rins/devel/lib/depthimage_to_laserscan/depthimage_to_laserscan.pdb"
   "CMakeFiles/depthimage_to_laserscan.dir/src/depthimage_to_laserscan.cpp.o"
+  "CMakeFiles/depthimage_to_laserscan.dir/src/depthimage_to_laserscan.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

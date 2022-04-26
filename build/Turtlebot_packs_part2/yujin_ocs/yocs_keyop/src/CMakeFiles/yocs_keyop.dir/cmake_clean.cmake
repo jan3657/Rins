@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/lib/yocs_keyop/yocs_keyop"
-  "/home/jan/ROS/devel/lib/yocs_keyop/yocs_keyop.pdb"
+  "/home/jan/Rins/devel/lib/yocs_keyop/yocs_keyop"
+  "/home/jan/Rins/devel/lib/yocs_keyop/yocs_keyop.pdb"
   "CMakeFiles/yocs_keyop.dir/keyop.cpp.o"
+  "CMakeFiles/yocs_keyop.dir/keyop.cpp.o.d"
   "CMakeFiles/yocs_keyop.dir/main.cpp.o"
+  "CMakeFiles/yocs_keyop.dir/main.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

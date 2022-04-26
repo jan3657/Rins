@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/share/gennodejs/ros/exercise2/msg/Movement.js"
-  "/home/jan/ROS/devel/share/gennodejs/ros/exercise2/srv/MovementType.js"
+  "/home/jan/Rins/devel/share/gennodejs/ros/exercise2/msg/Movement.js"
+  "/home/jan/Rins/devel/share/gennodejs/ros/exercise2/srv/MovementType.js"
   "CMakeFiles/exercise2_generate_messages_nodejs"
 )
 

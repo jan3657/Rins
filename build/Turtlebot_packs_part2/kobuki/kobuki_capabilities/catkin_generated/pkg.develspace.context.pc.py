@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "kobuki_capabilities"
-PROJECT_SPACE_DIR = "/home/jan/ROS/devel"
+PROJECT_SPACE_DIR = "/home/jan/Rins/devel"
 PROJECT_VERSION = "0.7.6"

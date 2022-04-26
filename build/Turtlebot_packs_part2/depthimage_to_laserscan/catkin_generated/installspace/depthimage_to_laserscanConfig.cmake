@@ -67,14 +67,14 @@ set(depthimage_to_laserscan_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(depthimage_to_laserscan_SOURCE_PREFIX /home/jan/ROS/src/Turtlebot_packs_part2/depthimage_to_laserscan)
-  set(depthimage_to_laserscan_DEVEL_PREFIX /home/jan/ROS/devel)
+  set(depthimage_to_laserscan_SOURCE_PREFIX /home/jan/Rins/src/Turtlebot_packs_part2/depthimage_to_laserscan)
+  set(depthimage_to_laserscan_DEVEL_PREFIX /home/jan/Rins/devel)
   set(depthimage_to_laserscan_INSTALL_PREFIX "")
   set(depthimage_to_laserscan_PREFIX ${depthimage_to_laserscan_DEVEL_PREFIX})
 else()
   set(depthimage_to_laserscan_SOURCE_PREFIX "")
   set(depthimage_to_laserscan_DEVEL_PREFIX "")
-  set(depthimage_to_laserscan_INSTALL_PREFIX /home/jan/ROS/install)
+  set(depthimage_to_laserscan_INSTALL_PREFIX /home/jan/Rins/install)
   set(depthimage_to_laserscan_PREFIX ${depthimage_to_laserscan_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jan/ROS/install/lib;/home/jan/ROS/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jan/Rins/install/lib;/home/jan/Rins/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

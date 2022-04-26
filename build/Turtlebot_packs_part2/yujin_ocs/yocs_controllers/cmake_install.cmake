@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,22 +37,27 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/catkin_generated/installspace/yocs_controllers.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/catkin_generated/installspace/yocs_controllers.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_controllers/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/catkin_generated/installspace/yocs_controllersConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/catkin_generated/installspace/yocs_controllersConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/catkin_generated/installspace/yocs_controllersConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/catkin_generated/installspace/yocs_controllersConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_controllers" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yocs_controllers" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yocs_controllers" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/include/yocs_controllers/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yocs_controllers" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/yujin_ocs/yocs_controllers/include/yocs_controllers/")
 endif()
 

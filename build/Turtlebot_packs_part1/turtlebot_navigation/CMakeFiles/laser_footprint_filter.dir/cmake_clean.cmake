@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/lib/turtlebot_navigation/laser_footprint_filter"
-  "/home/jan/ROS/devel/lib/turtlebot_navigation/laser_footprint_filter.pdb"
+  "/home/jan/Rins/devel/lib/turtlebot_navigation/laser_footprint_filter"
+  "/home/jan/Rins/devel/lib/turtlebot_navigation/laser_footprint_filter.pdb"
   "CMakeFiles/laser_footprint_filter.dir/src/laser_footprint_filter.cpp.o"
+  "CMakeFiles/laser_footprint_filter.dir/src/laser_footprint_filter.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

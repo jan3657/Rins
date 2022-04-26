@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,19 +37,24 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/catkin_generated/installspace/turtlebot_interactive_markers.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/catkin_generated/installspace/turtlebot_interactive_markers.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot_interactive_markers/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/catkin_generated/installspace/turtlebot_interactive_markersConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/catkin_generated/installspace/turtlebot_interactive_markersConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/catkin_generated/installspace/turtlebot_interactive_markersConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/catkin_generated/installspace/turtlebot_interactive_markersConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot_interactive_markers" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot_interactive_markers" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,12 +64,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot_interactive_markers/turtlebot_marker_server"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/turtlebot_interactive_markers" TYPE EXECUTABLE FILES "/home/jan/ROS/devel/lib/turtlebot_interactive_markers/turtlebot_marker_server")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/turtlebot_interactive_markers" TYPE EXECUTABLE FILES "/home/jan/Rins/devel/lib/turtlebot_interactive_markers/turtlebot_marker_server")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot_interactive_markers/turtlebot_marker_server" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot_interactive_markers/turtlebot_marker_server")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot_interactive_markers/turtlebot_marker_server"
-         OLD_RPATH "/home/jan/ROS/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/jan/Rins/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot_interactive_markers/turtlebot_marker_server")
@@ -73,6 +78,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot_interactive_markers" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot_interactive_markers" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/launch")
 endif()
 

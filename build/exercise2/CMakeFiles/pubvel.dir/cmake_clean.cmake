@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/lib/exercise2/pubvel"
-  "/home/jan/ROS/devel/lib/exercise2/pubvel.pdb"
+  "/home/jan/Rins/devel/lib/exercise2/pubvel"
+  "/home/jan/Rins/devel/lib/exercise2/pubvel.pdb"
   "CMakeFiles/pubvel.dir/src/pubvel.cpp.o"
+  "CMakeFiles/pubvel.dir/src/pubvel.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

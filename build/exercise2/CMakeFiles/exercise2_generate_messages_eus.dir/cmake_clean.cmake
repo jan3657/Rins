@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/share/roseus/ros/exercise2/manifest.l"
-  "/home/jan/ROS/devel/share/roseus/ros/exercise2/msg/Movement.l"
-  "/home/jan/ROS/devel/share/roseus/ros/exercise2/srv/MovementType.l"
+  "/home/jan/Rins/devel/share/roseus/ros/exercise2/manifest.l"
+  "/home/jan/Rins/devel/share/roseus/ros/exercise2/msg/Movement.l"
+  "/home/jan/Rins/devel/share/roseus/ros/exercise2/srv/MovementType.l"
   "CMakeFiles/exercise2_generate_messages_eus"
 )
 

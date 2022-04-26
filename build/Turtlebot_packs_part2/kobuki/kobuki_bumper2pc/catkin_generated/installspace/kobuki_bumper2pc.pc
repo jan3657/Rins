@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: kobuki_bumper2pc
 Description: Description of kobuki_bumper2pc

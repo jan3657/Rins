@@ -1,8 +1,0 @@
-prefix=/home/jan/ROS/install
-
-Name: homework1
-Description: Description of homework1
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/include/exercise2/Movement.h"
-  "/home/jan/ROS/devel/include/exercise2/MovementType.h"
+  "/home/jan/Rins/devel/include/exercise2/Movement.h"
+  "/home/jan/Rins/devel/include/exercise2/MovementType.h"
   "CMakeFiles/exercise2_generate_messages_cpp"
 )
 

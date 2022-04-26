@@ -67,14 +67,14 @@ set(kobuki_capabilities_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(kobuki_capabilities_SOURCE_PREFIX /home/jan/ROS/src/Turtlebot_packs_part2/kobuki/kobuki_capabilities)
-  set(kobuki_capabilities_DEVEL_PREFIX /home/jan/ROS/devel)
+  set(kobuki_capabilities_SOURCE_PREFIX /home/jan/Rins/src/Turtlebot_packs_part2/kobuki/kobuki_capabilities)
+  set(kobuki_capabilities_DEVEL_PREFIX /home/jan/Rins/devel)
   set(kobuki_capabilities_INSTALL_PREFIX "")
   set(kobuki_capabilities_PREFIX ${kobuki_capabilities_DEVEL_PREFIX})
 else()
   set(kobuki_capabilities_SOURCE_PREFIX "")
   set(kobuki_capabilities_DEVEL_PREFIX "")
-  set(kobuki_capabilities_INSTALL_PREFIX /home/jan/ROS/install)
+  set(kobuki_capabilities_INSTALL_PREFIX /home/jan/Rins/install)
   set(kobuki_capabilities_PREFIX ${kobuki_capabilities_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jan/ROS/install/lib;/home/jan/ROS/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jan/Rins/install/lib;/home/jan/Rins/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

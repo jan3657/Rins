@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/include/yocs_msgs/JoystickConfig.h"
-  "/home/jan/ROS/devel/lib/python3/dist-packages/yocs_msgs/cfg/JoystickConfig.py"
-  "/home/jan/ROS/devel/share/yocs_msgs/docs/JoystickConfig-usage.dox"
-  "/home/jan/ROS/devel/share/yocs_msgs/docs/JoystickConfig.dox"
-  "/home/jan/ROS/devel/share/yocs_msgs/docs/JoystickConfig.wikidoc"
+  "/home/jan/Rins/devel/include/yocs_msgs/JoystickConfig.h"
+  "/home/jan/Rins/devel/lib/python3/dist-packages/yocs_msgs/cfg/JoystickConfig.py"
+  "/home/jan/Rins/devel/share/yocs_msgs/docs/JoystickConfig-usage.dox"
+  "/home/jan/Rins/devel/share/yocs_msgs/docs/JoystickConfig.dox"
+  "/home/jan/Rins/devel/share/yocs_msgs/docs/JoystickConfig.wikidoc"
   "CMakeFiles/yocs_msgs_gencfg"
 )
 

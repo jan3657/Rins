@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/jan/ROS/devel/lib/tf2/test_simple"
-  "/home/jan/ROS/devel/lib/tf2/test_simple.pdb"
+  "/home/jan/Rins/devel/lib/tf2/test_simple"
+  "/home/jan/Rins/devel/lib/tf2/test_simple.pdb"
   "CMakeFiles/test_simple.dir/test/simple_tf2_core.cpp.o"
+  "CMakeFiles/test_simple.dir/test/simple_tf2_core.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

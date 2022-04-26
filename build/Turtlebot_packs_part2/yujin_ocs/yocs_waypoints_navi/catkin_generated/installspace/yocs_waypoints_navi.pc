@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: yocs_waypoints_navi
 Description: Description of yocs_waypoints_navi

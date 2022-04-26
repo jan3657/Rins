@@ -1,8 +1,8 @@
-# Install script for directory: /home/jan/ROS/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo
+# Install script for directory: /home/jan/Rins/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jan/ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jan/Rins/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,30 +37,35 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/catkin_generated/installspace/kobuki_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/catkin_generated/installspace/kobuki_gazebo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo/cmake" TYPE FILE FILES
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/catkin_generated/installspace/kobuki_gazeboConfig.cmake"
-    "/home/jan/ROS/build/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/catkin_generated/installspace/kobuki_gazeboConfig-version.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/catkin_generated/installspace/kobuki_gazeboConfig.cmake"
+    "/home/jan/Rins/build/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/catkin_generated/installspace/kobuki_gazeboConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE FILE FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE FILE FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/param")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/param")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE DIRECTORY FILES "/home/jan/ROS/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/worlds")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kobuki_gazebo" TYPE DIRECTORY FILES "/home/jan/Rins/src/Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo/worlds")
 endif()
 

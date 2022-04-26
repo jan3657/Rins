@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/install
+prefix=/home/jan/Rins/install
 
 Name: kobuki_safety_controller
 Description: Description of kobuki_safety_controller

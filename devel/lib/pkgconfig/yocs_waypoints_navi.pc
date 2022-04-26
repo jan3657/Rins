@@ -1,4 +1,4 @@
-prefix=/home/jan/ROS/devel
+prefix=/home/jan/Rins/devel
 
 Name: yocs_waypoints_navi
 Description: Description of yocs_waypoints_navi
