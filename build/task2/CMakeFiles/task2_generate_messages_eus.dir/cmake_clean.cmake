@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/home/jan/Rins/devel/share/roseus/ros/task2/manifest.l"
   "/home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l"
+  "/home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l"
   "CMakeFiles/task2_generate_messages_eus"
 )
 

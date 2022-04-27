@@ -7,4 +7,6 @@
   :components ((:file "_package")
     (:file "Cylinder" :depends-on ("_package_Cylinder"))
     (:file "_package_Cylinder" :depends-on ("_package"))
+    (:file "Ring" :depends-on ("_package_Ring"))
+    (:file "_package_Ring" :depends-on ("_package"))
   ))

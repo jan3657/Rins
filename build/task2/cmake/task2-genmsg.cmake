@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "task2: 1 messages, 0 services")
+message(STATUS "task2: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Itask2:/home/jan/Rins/src/task2/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg")
 
@@ -19,7 +19,12 @@ add_custom_target(task2_generate_messages ALL)
 
 get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Cylinder.msg" NAME_WE)
 add_custom_target(_task2_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "task2" "/home/jan/Rins/src/task2/msg/Cylinder.msg" "std_msgs/ColorRGBA:std_msgs/Header:geometry_msgs/PointStamped:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "task2" "/home/jan/Rins/src/task2/msg/Cylinder.msg" "geometry_msgs/PointStamped:std_msgs/Header:geometry_msgs/Point"
+)
+
+get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Ring.msg" NAME_WE)
+add_custom_target(_task2_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "task2" "/home/jan/Rins/src/task2/msg/Ring.msg" "geometry_msgs/PointStamped:std_msgs/Header:geometry_msgs/Point"
 )
 
 #
@@ -31,7 +36,13 @@ add_custom_target(_task2_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(task2
   "/home/jan/Rins/src/task2/msg/Cylinder.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/task2
+)
+_generate_msg_cpp(task2
+  "/home/jan/Rins/src/task2/msg/Ring.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/task2
 )
 
@@ -51,6 +62,8 @@ add_dependencies(task2_generate_messages task2_generate_messages_cpp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Cylinder.msg" NAME_WE)
 add_dependencies(task2_generate_messages_cpp _task2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Ring.msg" NAME_WE)
+add_dependencies(task2_generate_messages_cpp _task2_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(task2_gencpp)
@@ -64,7 +77,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS task2_generate_messages_cpp)
 _generate_msg_eus(task2
   "/home/jan/Rins/src/task2/msg/Cylinder.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/task2
+)
+_generate_msg_eus(task2
+  "/home/jan/Rins/src/task2/msg/Ring.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/task2
 )
 
@@ -84,6 +103,8 @@ add_dependencies(task2_generate_messages task2_generate_messages_eus)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Cylinder.msg" NAME_WE)
 add_dependencies(task2_generate_messages_eus _task2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Ring.msg" NAME_WE)
+add_dependencies(task2_generate_messages_eus _task2_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(task2_geneus)
@@ -97,7 +118,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS task2_generate_messages_eus)
 _generate_msg_lisp(task2
   "/home/jan/Rins/src/task2/msg/Cylinder.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/task2
+)
+_generate_msg_lisp(task2
+  "/home/jan/Rins/src/task2/msg/Ring.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/task2
 )
 
@@ -117,6 +144,8 @@ add_dependencies(task2_generate_messages task2_generate_messages_lisp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Cylinder.msg" NAME_WE)
 add_dependencies(task2_generate_messages_lisp _task2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Ring.msg" NAME_WE)
+add_dependencies(task2_generate_messages_lisp _task2_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(task2_genlisp)
@@ -130,7 +159,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS task2_generate_messages_lisp)
 _generate_msg_nodejs(task2
   "/home/jan/Rins/src/task2/msg/Cylinder.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/task2
+)
+_generate_msg_nodejs(task2
+  "/home/jan/Rins/src/task2/msg/Ring.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/task2
 )
 
@@ -150,6 +185,8 @@ add_dependencies(task2_generate_messages task2_generate_messages_nodejs)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Cylinder.msg" NAME_WE)
 add_dependencies(task2_generate_messages_nodejs _task2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Ring.msg" NAME_WE)
+add_dependencies(task2_generate_messages_nodejs _task2_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(task2_gennodejs)
@@ -163,7 +200,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS task2_generate_messages_nodejs)
 _generate_msg_py(task2
   "/home/jan/Rins/src/task2/msg/Cylinder.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/task2
+)
+_generate_msg_py(task2
+  "/home/jan/Rins/src/task2/msg/Ring.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/task2
 )
 
@@ -182,6 +225,8 @@ add_dependencies(task2_generate_messages task2_generate_messages_py)
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Cylinder.msg" NAME_WE)
+add_dependencies(task2_generate_messages_py _task2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jan/Rins/src/task2/msg/Ring.msg" NAME_WE)
 add_dependencies(task2_generate_messages_py _task2_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

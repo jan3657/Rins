@@ -354,6 +354,20 @@ _task2_generate_messages_check_deps_Cylinder/fast:
 .PHONY : _task2_generate_messages_check_deps_Cylinder/fast
 
 # Convenience name for target.
+task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/rule
+.PHONY : task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/rule
+
+# Convenience name for target.
+_task2_generate_messages_check_deps_Ring: task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/rule
+.PHONY : _task2_generate_messages_check_deps_Ring
+
+# fast build rule for target.
+_task2_generate_messages_check_deps_Ring/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/build.make task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/build
+.PHONY : _task2_generate_messages_check_deps_Ring/fast
+
+# Convenience name for target.
 task2/CMakeFiles/task2_generate_messages_cpp.dir/rule:
 	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task2/CMakeFiles/task2_generate_messages_cpp.dir/rule
 .PHONY : task2/CMakeFiles/task2_generate_messages_cpp.dir/rule
@@ -849,6 +863,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... _task2_generate_messages_check_deps_Cylinder"
+	@echo "... _task2_generate_messages_check_deps_Ring"
 	@echo "... nodelet_topic_tools_gencfg"
 	@echo "... pcl_msgs_generate_messages_cpp"
 	@echo "... pcl_msgs_generate_messages_eus"

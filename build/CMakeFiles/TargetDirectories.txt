@@ -418,6 +418,7 @@
 /home/jan/Rins/build/task2/CMakeFiles/topic_tools_generate_messages_py.dir
 /home/jan/Rins/build/task2/CMakeFiles/task2_generate_messages.dir
 /home/jan/Rins/build/task2/CMakeFiles/_task2_generate_messages_check_deps_Cylinder.dir
+/home/jan/Rins/build/task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir
 /home/jan/Rins/build/task2/CMakeFiles/task2_generate_messages_cpp.dir
 /home/jan/Rins/build/task2/CMakeFiles/task2_gencpp.dir
 /home/jan/Rins/build/task2/CMakeFiles/task2_generate_messages_eus.dir

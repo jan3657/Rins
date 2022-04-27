@@ -67,19 +67,29 @@ include task2/CMakeFiles/task2_generate_messages_cpp.dir/compiler_depend.make
 include task2/CMakeFiles/task2_generate_messages_cpp.dir/progress.make
 
 task2/CMakeFiles/task2_generate_messages_cpp: /home/jan/Rins/devel/include/task2/Cylinder.h
+task2/CMakeFiles/task2_generate_messages_cpp: /home/jan/Rins/devel/include/task2/Ring.h
 
 /home/jan/Rins/devel/include/task2/Cylinder.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/jan/Rins/devel/include/task2/Cylinder.h: /home/jan/Rins/src/task2/msg/Cylinder.msg
-/home/jan/Rins/devel/include/task2/Cylinder.h: /opt/ros/noetic/share/std_msgs/msg/ColorRGBA.msg
-/home/jan/Rins/devel/include/task2/Cylinder.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/include/task2/Cylinder.h: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
+/home/jan/Rins/devel/include/task2/Cylinder.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/include/task2/Cylinder.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/jan/Rins/devel/include/task2/Cylinder.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from task2/Cylinder.msg"
 	cd /home/jan/Rins/src/task2 && /home/jan/Rins/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jan/Rins/src/task2/msg/Cylinder.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/include/task2 -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/jan/Rins/devel/include/task2/Ring.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/jan/Rins/devel/include/task2/Ring.h: /home/jan/Rins/src/task2/msg/Ring.msg
+/home/jan/Rins/devel/include/task2/Ring.h: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
+/home/jan/Rins/devel/include/task2/Ring.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/jan/Rins/devel/include/task2/Ring.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/jan/Rins/devel/include/task2/Ring.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from task2/Ring.msg"
+	cd /home/jan/Rins/src/task2 && /home/jan/Rins/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jan/Rins/src/task2/msg/Ring.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/include/task2 -e /opt/ros/noetic/share/gencpp/cmake/..
+
 task2_generate_messages_cpp: task2/CMakeFiles/task2_generate_messages_cpp
 task2_generate_messages_cpp: /home/jan/Rins/devel/include/task2/Cylinder.h
+task2_generate_messages_cpp: /home/jan/Rins/devel/include/task2/Ring.h
 task2_generate_messages_cpp: task2/CMakeFiles/task2_generate_messages_cpp.dir/build.make
 .PHONY : task2_generate_messages_cpp
 

@@ -67,6 +67,7 @@ include task2/CMakeFiles/task2_generate_messages_eus.dir/compiler_depend.make
 include task2/CMakeFiles/task2_generate_messages_eus.dir/progress.make
 
 task2/CMakeFiles/task2_generate_messages_eus: /home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l
+task2/CMakeFiles/task2_generate_messages_eus: /home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l
 task2/CMakeFiles/task2_generate_messages_eus: /home/jan/Rins/devel/share/roseus/ros/task2/manifest.l
 
 /home/jan/Rins/devel/share/roseus/ros/task2/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
@@ -75,16 +76,24 @@ task2/CMakeFiles/task2_generate_messages_eus: /home/jan/Rins/devel/share/roseus/
 
 /home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l: /home/jan/Rins/src/task2/msg/Cylinder.msg
-/home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l: /opt/ros/noetic/share/std_msgs/msg/ColorRGBA.msg
-/home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
+/home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from task2/Cylinder.msg"
 	cd /home/jan/Rins/build/task2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/jan/Rins/src/task2/msg/Cylinder.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/share/roseus/ros/task2/msg
 
+/home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l: /home/jan/Rins/src/task2/msg/Ring.msg
+/home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
+/home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from task2/Ring.msg"
+	cd /home/jan/Rins/build/task2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/jan/Rins/src/task2/msg/Ring.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/share/roseus/ros/task2/msg
+
 task2_generate_messages_eus: task2/CMakeFiles/task2_generate_messages_eus
 task2_generate_messages_eus: /home/jan/Rins/devel/share/roseus/ros/task2/manifest.l
 task2_generate_messages_eus: /home/jan/Rins/devel/share/roseus/ros/task2/msg/Cylinder.l
+task2_generate_messages_eus: /home/jan/Rins/devel/share/roseus/ros/task2/msg/Ring.l
 task2_generate_messages_eus: task2/CMakeFiles/task2_generate_messages_eus.dir/build.make
 .PHONY : task2_generate_messages_eus
 

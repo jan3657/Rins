@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Cylinder.lisp"
+  "/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp"
   "CMakeFiles/task2_generate_messages_lisp"
 )
 

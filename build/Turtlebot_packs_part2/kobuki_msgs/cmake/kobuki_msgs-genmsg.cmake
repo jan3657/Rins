@@ -109,22 +109,22 @@ add_custom_target(_kobuki_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg" NAME_WE)
 add_custom_target(_kobuki_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg" "actionlib_msgs/GoalID:kobuki_msgs/AutoDockingActionFeedback:std_msgs/Header:actionlib_msgs/GoalStatus:kobuki_msgs/AutoDockingFeedback:kobuki_msgs/AutoDockingGoal:kobuki_msgs/AutoDockingActionGoal:kobuki_msgs/AutoDockingActionResult:kobuki_msgs/AutoDockingResult"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg" "kobuki_msgs/AutoDockingFeedback:kobuki_msgs/AutoDockingGoal:kobuki_msgs/AutoDockingActionGoal:kobuki_msgs/AutoDockingActionResult:actionlib_msgs/GoalStatus:std_msgs/Header:actionlib_msgs/GoalID:kobuki_msgs/AutoDockingResult:kobuki_msgs/AutoDockingActionFeedback"
 )
 
 get_filename_component(_filename "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg" NAME_WE)
 add_custom_target(_kobuki_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg" "actionlib_msgs/GoalID:std_msgs/Header:kobuki_msgs/AutoDockingGoal"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg" "actionlib_msgs/GoalID:kobuki_msgs/AutoDockingGoal:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg" NAME_WE)
 add_custom_target(_kobuki_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg" "kobuki_msgs/AutoDockingResult:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg" "actionlib_msgs/GoalStatus:actionlib_msgs/GoalID:kobuki_msgs/AutoDockingResult:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg" NAME_WE)
 add_custom_target(_kobuki_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:std_msgs/Header:kobuki_msgs/AutoDockingFeedback"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "kobuki_msgs" "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg" "actionlib_msgs/GoalStatus:kobuki_msgs/AutoDockingFeedback:actionlib_msgs/GoalID:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg" NAME_WE)
@@ -259,25 +259,25 @@ _generate_msg_cpp(kobuki_msgs
 _generate_msg_cpp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg"
+  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_cpp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_cpp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_cpp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_cpp(kobuki_msgs
@@ -484,25 +484,25 @@ _generate_msg_eus(kobuki_msgs
 _generate_msg_eus(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg"
+  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_eus(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_eus(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_eus(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_eus(kobuki_msgs
@@ -709,25 +709,25 @@ _generate_msg_lisp(kobuki_msgs
 _generate_msg_lisp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg"
+  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_lisp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_lisp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_lisp(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_lisp(kobuki_msgs
@@ -934,25 +934,25 @@ _generate_msg_nodejs(kobuki_msgs
 _generate_msg_nodejs(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg"
+  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_nodejs(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_nodejs(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_nodejs(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_nodejs(kobuki_msgs
@@ -1159,25 +1159,25 @@ _generate_msg_py(kobuki_msgs
 _generate_msg_py(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg"
+  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_py(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingGoal.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_py(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_py(kobuki_msgs
   "/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/kobuki_msgs
 )
 _generate_msg_py(kobuki_msgs

@@ -3,5 +3,7 @@
   (:export
    "<CYLINDER>"
    "CYLINDER"
+   "<RING>"
+   "RING"
   ))
 

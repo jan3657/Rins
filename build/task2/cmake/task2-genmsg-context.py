@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/jan/Rins/src/task2/msg/Cylinder.msg"
+messages_str = "/home/jan/Rins/src/task2/msg/Cylinder.msg;/home/jan/Rins/src/task2/msg/Ring.msg"
 services_str = ""
 pkg_name = "task2"
 dependencies_str = "std_msgs;geometry_msgs"

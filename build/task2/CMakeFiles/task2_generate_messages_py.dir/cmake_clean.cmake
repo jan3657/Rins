@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py"
+  "/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py"
   "/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/__init__.py"
   "CMakeFiles/task2_generate_messages_py"
 )

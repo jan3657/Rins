@@ -67,24 +67,34 @@ include task2/CMakeFiles/task2_generate_messages_py.dir/compiler_depend.make
 include task2/CMakeFiles/task2_generate_messages_py.dir/progress.make
 
 task2/CMakeFiles/task2_generate_messages_py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py
+task2/CMakeFiles/task2_generate_messages_py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py
 task2/CMakeFiles/task2_generate_messages_py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/__init__.py
 
 /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py: /home/jan/Rins/src/task2/msg/Cylinder.msg
-/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py: /opt/ros/noetic/share/std_msgs/msg/ColorRGBA.msg
-/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
+/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG task2/Cylinder"
 	cd /home/jan/Rins/build/task2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/jan/Rins/src/task2/msg/Cylinder.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg
 
+/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py: /home/jan/Rins/src/task2/msg/Ring.msg
+/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
+/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG task2/Ring"
+	cd /home/jan/Rins/build/task2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/jan/Rins/src/task2/msg/Ring.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg
+
 /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/__init__.py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for task2"
+/home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/__init__.py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for task2"
 	cd /home/jan/Rins/build/task2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg --initpy
 
 task2_generate_messages_py: task2/CMakeFiles/task2_generate_messages_py
 task2_generate_messages_py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Cylinder.py
+task2_generate_messages_py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/_Ring.py
 task2_generate_messages_py: /home/jan/Rins/devel/lib/python3/dist-packages/task2/msg/__init__.py
 task2_generate_messages_py: task2/CMakeFiles/task2_generate_messages_py.dir/build.make
 .PHONY : task2_generate_messages_py

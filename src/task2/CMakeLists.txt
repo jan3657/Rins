@@ -38,6 +38,7 @@ include_directories(
 add_message_files(
    FILES
    Cylinder.msg
+   Ring.msg
 )
 
 generate_messages(

@@ -1721,6 +1721,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "task2/CMakeFiles/topic_tools_generate_messages_py.dir/DependInfo.cmake"
   "task2/CMakeFiles/task2_generate_messages.dir/DependInfo.cmake"
   "task2/CMakeFiles/_task2_generate_messages_check_deps_Cylinder.dir/DependInfo.cmake"
+  "task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/DependInfo.cmake"
   "task2/CMakeFiles/task2_generate_messages_cpp.dir/DependInfo.cmake"
   "task2/CMakeFiles/task2_gencpp.dir/DependInfo.cmake"
   "task2/CMakeFiles/task2_generate_messages_eus.dir/DependInfo.cmake"

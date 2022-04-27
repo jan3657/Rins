@@ -2720,6 +2720,19 @@ _task2_generate_messages_check_deps_Cylinder/fast:
 .PHONY : _task2_generate_messages_check_deps_Cylinder/fast
 
 #=============================================================================
+# Target rules for targets named _task2_generate_messages_check_deps_Ring
+
+# Build rule for target.
+_task2_generate_messages_check_deps_Ring: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _task2_generate_messages_check_deps_Ring
+.PHONY : _task2_generate_messages_check_deps_Ring
+
+# fast build rule for target.
+_task2_generate_messages_check_deps_Ring/fast:
+	$(MAKE) $(MAKESILENT) -f task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/build.make task2/CMakeFiles/_task2_generate_messages_check_deps_Ring.dir/build
+.PHONY : _task2_generate_messages_check_deps_Ring/fast
+
+#=============================================================================
 # Target rules for targets named task2_generate_messages_cpp
 
 # Build rule for target.
@@ -4751,6 +4764,7 @@ help:
 	@echo "... _run_tests_turtlebot_description_gtest"
 	@echo "... _run_tests_turtlebot_description_gtest_turtlebot_description_test_urdf"
 	@echo "... _task2_generate_messages_check_deps_Cylinder"
+	@echo "... _task2_generate_messages_check_deps_Ring"
 	@echo "... _yocs_msgs_generate_messages_check_deps_ARPair"
 	@echo "... _yocs_msgs_generate_messages_check_deps_ARPairList"
 	@echo "... _yocs_msgs_generate_messages_check_deps_Column"

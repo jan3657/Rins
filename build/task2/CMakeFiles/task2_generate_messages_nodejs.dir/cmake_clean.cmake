@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/jan/Rins/devel/share/gennodejs/ros/task2/msg/Cylinder.js"
+  "/home/jan/Rins/devel/share/gennodejs/ros/task2/msg/Ring.js"
   "CMakeFiles/task2_generate_messages_nodejs"
 )
 

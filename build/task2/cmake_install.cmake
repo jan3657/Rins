@@ -43,7 +43,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/task2/msg" TYPE FILE FILES "/home/jan/Rins/src/task2/msg/Cylinder.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/task2/msg" TYPE FILE FILES
+    "/home/jan/Rins/src/task2/msg/Cylinder.msg"
+    "/home/jan/Rins/src/task2/msg/Ring.msg"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
