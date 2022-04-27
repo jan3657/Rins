@@ -10,17 +10,17 @@ import geometry_msgs.msg
 import std_msgs.msg
 
 class Ring(genpy.Message):
-  _md5sum = "79e9171f8aab1d9f862baaaf0114ad4a"
+  _md5sum = "310feb60ac61a5c4ef4a96dba833916e"
   _type = "task2/Ring"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """string color
-geometry_msgs/PointStamped position
+geometry_msgs/PoseStamped position
 
 ================================================================================
-MSG: geometry_msgs/PointStamped
-# This represents a Point with reference coordinate frame and timestamp
+MSG: geometry_msgs/PoseStamped
+# A Pose with reference coordinate frame and timestamp
 Header header
-Point point
+Pose pose
 
 ================================================================================
 MSG: std_msgs/Header
@@ -39,14 +39,29 @@ time stamp
 string frame_id
 
 ================================================================================
+MSG: geometry_msgs/Pose
+# A representation of pose in free space, composed of position and orientation. 
+Point position
+Quaternion orientation
+
+================================================================================
 MSG: geometry_msgs/Point
 # This contains the position of a point in free space
 float64 x
 float64 y
 float64 z
+
+================================================================================
+MSG: geometry_msgs/Quaternion
+# This represents an orientation in free space in quaternion form.
+
+float64 x
+float64 y
+float64 z
+float64 w
 """
   __slots__ = ['color','position']
-  _slot_types = ['string','geometry_msgs/PointStamped']
+  _slot_types = ['string','geometry_msgs/PoseStamped']
 
   def __init__(self, *args, **kwds):
     """
@@ -68,10 +83,10 @@ float64 z
       if self.color is None:
         self.color = ''
       if self.position is None:
-        self.position = geometry_msgs.msg.PointStamped()
+        self.position = geometry_msgs.msg.PoseStamped()
     else:
       self.color = ''
-      self.position = geometry_msgs.msg.PointStamped()
+      self.position = geometry_msgs.msg.PoseStamped()
 
   def _get_types(self):
     """
@@ -100,7 +115,7 @@ float64 z
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3d().pack(_x.position.point.x, _x.position.point.y, _x.position.point.z))
+      buff.write(_get_struct_7d().pack(_x.position.pose.position.x, _x.position.pose.position.y, _x.position.pose.position.z, _x.position.pose.orientation.x, _x.position.pose.orientation.y, _x.position.pose.orientation.z, _x.position.pose.orientation.w))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -113,7 +128,7 @@ float64 z
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.position is None:
-        self.position = geometry_msgs.msg.PointStamped()
+        self.position = geometry_msgs.msg.PoseStamped()
       end = 0
       start = end
       end += 4
@@ -139,8 +154,8 @@ float64 z
         self.position.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 24
-      (_x.position.point.x, _x.position.point.y, _x.position.point.z,) = _get_struct_3d().unpack(str[start:end])
+      end += 56
+      (_x.position.pose.position.x, _x.position.pose.position.y, _x.position.pose.position.z, _x.position.pose.orientation.x, _x.position.pose.orientation.y, _x.position.pose.orientation.z, _x.position.pose.orientation.w,) = _get_struct_7d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -168,7 +183,7 @@ float64 z
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3d().pack(_x.position.point.x, _x.position.point.y, _x.position.point.z))
+      buff.write(_get_struct_7d().pack(_x.position.pose.position.x, _x.position.pose.position.y, _x.position.pose.position.z, _x.position.pose.orientation.x, _x.position.pose.orientation.y, _x.position.pose.orientation.z, _x.position.pose.orientation.w))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -182,7 +197,7 @@ float64 z
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.position is None:
-        self.position = geometry_msgs.msg.PointStamped()
+        self.position = geometry_msgs.msg.PoseStamped()
       end = 0
       start = end
       end += 4
@@ -208,8 +223,8 @@ float64 z
         self.position.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 24
-      (_x.position.point.x, _x.position.point.y, _x.position.point.z,) = _get_struct_3d().unpack(str[start:end])
+      end += 56
+      (_x.position.pose.position.x, _x.position.pose.position.y, _x.position.pose.position.z, _x.position.pose.orientation.x, _x.position.pose.orientation.y, _x.position.pose.orientation.z, _x.position.pose.orientation.w,) = _get_struct_7d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -224,9 +239,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_3d = None
-def _get_struct_3d():
-    global _struct_3d
-    if _struct_3d is None:
-        _struct_3d = struct.Struct("<3d")
-    return _struct_3d
+_struct_7d = None
+def _get_struct_7d():
+    global _struct_7d
+    if _struct_7d is None:
+        _struct_7d = struct.Struct("<7d")
+    return _struct_7d

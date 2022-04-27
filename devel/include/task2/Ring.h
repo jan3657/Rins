@@ -15,7 +15,7 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <geometry_msgs/PointStamped.h>
+#include <geometry_msgs/PoseStamped.h>
 
 namespace task2
 {
@@ -39,7 +39,7 @@ struct Ring_
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _color_type;
   _color_type color;
 
-   typedef  ::geometry_msgs::PointStamped_<ContainerAllocator>  _position_type;
+   typedef  ::geometry_msgs::PoseStamped_<ContainerAllocator>  _position_type;
   _position_type position;
 
 
@@ -129,12 +129,12 @@ struct MD5Sum< ::task2::Ring_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "79e9171f8aab1d9f862baaaf0114ad4a";
+    return "310feb60ac61a5c4ef4a96dba833916e";
   }
 
   static const char* value(const ::task2::Ring_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x79e9171f8aab1d9fULL;
-  static const uint64_t static_value2 = 0x862baaaf0114ad4aULL;
+  static const uint64_t static_value1 = 0x310feb60ac61a5c4ULL;
+  static const uint64_t static_value2 = 0xef4a96dba833916eULL;
 };
 
 template<class ContainerAllocator>
@@ -154,13 +154,13 @@ struct Definition< ::task2::Ring_<ContainerAllocator> >
   static const char* value()
   {
     return "string color\n"
-"geometry_msgs/PointStamped position\n"
+"geometry_msgs/PoseStamped position\n"
 "\n"
 "================================================================================\n"
-"MSG: geometry_msgs/PointStamped\n"
-"# This represents a Point with reference coordinate frame and timestamp\n"
+"MSG: geometry_msgs/PoseStamped\n"
+"# A Pose with reference coordinate frame and timestamp\n"
 "Header header\n"
-"Point point\n"
+"Pose pose\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
@@ -179,11 +179,26 @@ struct Definition< ::task2::Ring_<ContainerAllocator> >
 "string frame_id\n"
 "\n"
 "================================================================================\n"
+"MSG: geometry_msgs/Pose\n"
+"# A representation of pose in free space, composed of position and orientation. \n"
+"Point position\n"
+"Quaternion orientation\n"
+"\n"
+"================================================================================\n"
 "MSG: geometry_msgs/Point\n"
 "# This contains the position of a point in free space\n"
 "float64 x\n"
 "float64 y\n"
 "float64 z\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Quaternion\n"
+"# This represents an orientation in free space in quaternion form.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"float64 w\n"
 ;
   }
 
@@ -226,7 +241,7 @@ struct Printer< ::task2::Ring_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.color);
     s << indent << "position: ";
     s << std::endl;
-    Printer< ::geometry_msgs::PointStamped_<ContainerAllocator> >::stream(s, indent + "  ", v.position);
+    Printer< ::geometry_msgs::PoseStamped_<ContainerAllocator> >::stream(s, indent + "  ", v.position);
   }
 };
 

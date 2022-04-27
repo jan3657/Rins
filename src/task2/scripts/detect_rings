@@ -7,7 +7,7 @@ import numpy as np
 import tf2_geometry_msgs
 import tf2_ros
 from sensor_msgs.msg import Image
-from geometry_msgs.msg import PointStamped, Vector3, Pose
+from geometry_msgs.msg import PointStamped, Vector3, Pose, PoseStamped
 from cv_bridge import CvBridge, CvBridgeError
 from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
@@ -72,12 +72,14 @@ class The_Ring:
         point_world = self.tf_buf.transform(point_s, "map")
 
         # Create a Pose object with the same position
-        pose = Pose()
-        pose.position.x = point_world.point.x
-        pose.position.y = point_world.point.y
-        pose.position.z = point_world.point.z
+        pose_stamped = PoseStamped()
+        pose_stamped.pose.position.x = point_world.point.x
+        pose_stamped.pose.position.y = point_world.point.y
+        pose_stamped.pose.position.z = point_world.point.z
+        pose_stamped.header.frame_id = "camera_rgb_optical_frame"
+        pose_stamped.header.stamp = rospy.Time(0)
 
-        return point_world, pose
+        return point_world, pose_stamped
 
     def depth_callback(self, data):
         #print('I got a new image!')
@@ -164,7 +166,7 @@ class The_Ring:
             #depth_image = self.bridge.imgmsg_to_cv2(depth_img, "32FC1")
 
             #self.get_pose(e1, float(np.mean(depth_image[x_min:x_max,y_min:y_max]))/1000.0)
-            point_world, pose = self.get_pose(
+            point_world, pose_stamped = self.get_pose(
                 e1, float(np.nanmean(cv_image[x_min:x_max, y_min:y_max])))
 
 
@@ -172,63 +174,63 @@ class The_Ring:
         if len(candidates) > 0:
             cv2.imshow("Image window", image_viz)
             cv2.waitKey(1)
-        #Dubi barvu
-        try:
-            coloured_img_msg = rospy.wait_for_message(
-                '/camera/rgb/image_raw', Image)
-            coloured_img = self.bridge.imgmsg_to_cv2(coloured_img_msg, "bgr8")
+            #Dubi barvu
+            try:
+                coloured_img_msg = rospy.wait_for_message(
+                    '/camera/rgb/image_raw', Image)
+                coloured_img = self.bridge.imgmsg_to_cv2(coloured_img_msg, "bgr8")
 
-        except CvBridgeError as e:
-            print(e)
+            except CvBridgeError as e:
+                print(e)
 
-        m1 = np.zeros(coloured_img.shape[0:2], np.uint8)
-        m2 = np.zeros(coloured_img.shape[0:2], np.uint8)
+            m1 = np.zeros(coloured_img.shape[0:2], np.uint8)
+            m2 = np.zeros(coloured_img.shape[0:2], np.uint8)
 
-        m1 = cv2.ellipse(m1, e1, (255, 255, 255), -1)
-        m2 = cv2.ellipse(m2, e2, (255, 255, 255), -1)
+            m1 = cv2.ellipse(m1, e1, (255, 255, 255), -1)
+            m2 = cv2.ellipse(m2, e2, (255, 255, 255), -1)
 
-        m3 = m2 - m1
+            m3 = m2 - m1
 
-        bgr_color = cv2.mean(coloured_img, mask=m3)[:-1]
+            bgr_color = cv2.mean(coloured_img, mask=m3)[:-1]
 
-        #RGB to colour name
-        rgb_color = bgr_color[::-1]
-        min = np.min(rgb_color)
-        limit = 20
+            #RGB to colour name
+            rgb_color = bgr_color[::-1]
+            min = np.min(rgb_color)
+            limit = 20
 
-        rNormalized = rgb_color[0]-min
-        gNormalized = rgb_color[1]-min
-        bNormalized = rgb_color[2]-min
-        #print(rgb_color)
+            rNormalized = rgb_color[0]-min
+            gNormalized = rgb_color[1]-min
+            bNormalized = rgb_color[2]-min
+            #print(rgb_color)
 
-        if(rNormalized < limit and gNormalized < limit and bNormalized < limit):
-            colour = "grey"
-        elif(rNormalized == 0):
-            if (gNormalized > bNormalized):
-                colour = "green" if gNormalized - bNormalized > limit else "cyan"
+            if(rNormalized < limit and gNormalized < limit and bNormalized < limit):
+                colour = "grey"
+            elif(rNormalized == 0):
+                if (gNormalized > bNormalized):
+                    colour = "green" if gNormalized - bNormalized > limit else "cyan"
+                else:
+                    colour = "blue" if bNormalized - gNormalized > limit else "cyan"
+            elif(gNormalized == 0):
+                if (rNormalized > bNormalized):
+                    colour = "red" if rNormalized - bNormalized > limit else "magenta"
+                else:
+                    colour = "blue" if bNormalized - rNormalized > limit else "magenta"
+            elif(bNormalized == 0):
+                if (gNormalized > rNormalized):
+                    colour = "green" if gNormalized - rNormalized > limit else "yellow"
+                else:
+                    colour = "red" if rNormalized - gNormalized > limit else "yellow"
             else:
-                colour = "blue" if bNormalized - gNormalized > limit else "cyan"
-        elif(gNormalized == 0):
-            if (rNormalized > bNormalized):
-                colour = "red" if rNormalized - bNormalized > limit else "magenta"
-            else:
-                colour = "blue" if bNormalized - rNormalized > limit else "magenta"
-        elif(bNormalized == 0):
-            if (gNormalized > rNormalized):
-                colour = "green" if gNormalized - rNormalized > limit else "yellow"
-            else:
-                colour = "red" if rNormalized - gNormalized > limit else "yellow"
-        else:
-            colour = "idk"
+                colour = "idk"
 
-        #publish the ring
-        
-        ringMsg = Ring()
-        ringMsg.position = point_world
-        ringMsg.color = colour
-        print(type(ringMsg))
-        ring_publisher = rospy.Publisher('detected_ring', Ring, queue_size=1)
-        ring_publisher.publish(ringMsg)
+            #publish the ring
+            
+            ringMsg = Ring()
+            ringMsg.position = pose_stamped
+            ringMsg.color = colour
+            #print(type(pose_stamped))
+            ring_publisher = rospy.Publisher('detected_ring', Ring, queue_size=1)
+            ring_publisher.publish(ringMsg)
 
 
 def main():

@@ -1,2 +1,2 @@
 string color
-geometry_msgs/PointStamped position
+geometry_msgs/PoseStamped position

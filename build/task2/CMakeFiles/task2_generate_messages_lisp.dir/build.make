@@ -71,17 +71,19 @@ task2/CMakeFiles/task2_generate_messages_lisp: /home/jan/Rins/devel/share/common
 
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Cylinder.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Cylinder.lisp: /home/jan/Rins/src/task2/msg/Cylinder.msg
-/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Cylinder.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Cylinder.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Cylinder.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Cylinder.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from task2/Cylinder.msg"
 	cd /home/jan/Rins/build/task2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/jan/Rins/src/task2/msg/Cylinder.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/share/common-lisp/ros/task2/msg
 
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /home/jan/Rins/src/task2/msg/Ring.msg
-/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
+/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/jan/Rins/devel/share/common-lisp/ros/task2/msg/Ring.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jan/Rins/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from task2/Ring.msg"
 	cd /home/jan/Rins/build/task2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/jan/Rins/src/task2/msg/Ring.msg -Itask2:/home/jan/Rins/src/task2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p task2 -o /home/jan/Rins/devel/share/common-lisp/ros/task2/msg
 

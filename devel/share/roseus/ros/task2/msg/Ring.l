@@ -22,7 +22,7 @@
   (:init
    (&key
     ((:color __color) "")
-    ((:position __position) (instance geometry_msgs::PointStamped :init))
+    ((:position __position) (instance geometry_msgs::PoseStamped :init))
     )
    (send-super :init)
    (setq _color (string __color))
@@ -43,7 +43,7 @@
    (+
     ;; string _color
     4 (length _color)
-    ;; geometry_msgs/PointStamped _position
+    ;; geometry_msgs/PoseStamped _position
     (send _position :serialization-length)
     ))
   (:serialize
@@ -52,7 +52,7 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; string _color
        (write-long (length _color) s) (princ _color s)
-     ;; geometry_msgs/PointStamped _position
+     ;; geometry_msgs/PoseStamped _position
        (send _position :serialize s)
      ;;
      (if (null strm) (get-output-stream-string s))))
@@ -60,23 +60,23 @@
    (buf &optional (ptr- 0))
    ;; string _color
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _color (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
-   ;; geometry_msgs/PointStamped _position
+   ;; geometry_msgs/PoseStamped _position
      (send _position :deserialize buf ptr-) (incf ptr- (send _position :serialization-length))
    ;;
    self)
   )
 
-(setf (get task2::Ring :md5sum-) "79e9171f8aab1d9f862baaaf0114ad4a")
+(setf (get task2::Ring :md5sum-) "310feb60ac61a5c4ef4a96dba833916e")
 (setf (get task2::Ring :datatype-) "task2/Ring")
 (setf (get task2::Ring :definition-)
       "string color
-geometry_msgs/PointStamped position
+geometry_msgs/PoseStamped position
 
 ================================================================================
-MSG: geometry_msgs/PointStamped
-# This represents a Point with reference coordinate frame and timestamp
+MSG: geometry_msgs/PoseStamped
+# A Pose with reference coordinate frame and timestamp
 Header header
-Point point
+Pose pose
 
 ================================================================================
 MSG: std_msgs/Header
@@ -95,16 +95,31 @@ time stamp
 string frame_id
 
 ================================================================================
+MSG: geometry_msgs/Pose
+# A representation of pose in free space, composed of position and orientation. 
+Point position
+Quaternion orientation
+
+================================================================================
 MSG: geometry_msgs/Point
 # This contains the position of a point in free space
 float64 x
 float64 y
 float64 z
 
+================================================================================
+MSG: geometry_msgs/Quaternion
+# This represents an orientation in free space in quaternion form.
+
+float64 x
+float64 y
+float64 z
+float64 w
+
 ")
 
 
 
-(provide :task2/Ring "79e9171f8aab1d9f862baaaf0114ad4a")
+(provide :task2/Ring "310feb60ac61a5c4ef4a96dba833916e")
 
 

@@ -33,7 +33,7 @@ class Ring {
         this.position = initObj.position
       }
       else {
-        this.position = new geometry_msgs.msg.PointStamped();
+        this.position = new geometry_msgs.msg.PoseStamped();
       }
     }
   }
@@ -43,7 +43,7 @@ class Ring {
     // Serialize message field [color]
     bufferOffset = _serializer.string(obj.color, buffer, bufferOffset);
     // Serialize message field [position]
-    bufferOffset = geometry_msgs.msg.PointStamped.serialize(obj.position, buffer, bufferOffset);
+    bufferOffset = geometry_msgs.msg.PoseStamped.serialize(obj.position, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -54,14 +54,14 @@ class Ring {
     // Deserialize message field [color]
     data.color = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [position]
-    data.position = geometry_msgs.msg.PointStamped.deserialize(buffer, bufferOffset);
+    data.position = geometry_msgs.msg.PoseStamped.deserialize(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += _getByteLength(object.color);
-    length += geometry_msgs.msg.PointStamped.getMessageSize(object.position);
+    length += geometry_msgs.msg.PoseStamped.getMessageSize(object.position);
     return length + 4;
   }
 
@@ -72,20 +72,20 @@ class Ring {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '79e9171f8aab1d9f862baaaf0114ad4a';
+    return '310feb60ac61a5c4ef4a96dba833916e';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     string color
-    geometry_msgs/PointStamped position
+    geometry_msgs/PoseStamped position
     
     ================================================================================
-    MSG: geometry_msgs/PointStamped
-    # This represents a Point with reference coordinate frame and timestamp
+    MSG: geometry_msgs/PoseStamped
+    # A Pose with reference coordinate frame and timestamp
     Header header
-    Point point
+    Pose pose
     
     ================================================================================
     MSG: std_msgs/Header
@@ -104,11 +104,26 @@ class Ring {
     string frame_id
     
     ================================================================================
+    MSG: geometry_msgs/Pose
+    # A representation of pose in free space, composed of position and orientation. 
+    Point position
+    Quaternion orientation
+    
+    ================================================================================
     MSG: geometry_msgs/Point
     # This contains the position of a point in free space
     float64 x
     float64 y
     float64 z
+    
+    ================================================================================
+    MSG: geometry_msgs/Quaternion
+    # This represents an orientation in free space in quaternion form.
+    
+    float64 x
+    float64 y
+    float64 z
+    float64 w
     
     `;
   }
@@ -127,10 +142,10 @@ class Ring {
     }
 
     if (msg.position !== undefined) {
-      resolved.position = geometry_msgs.msg.PointStamped.Resolve(msg.position)
+      resolved.position = geometry_msgs.msg.PoseStamped.Resolve(msg.position)
     }
     else {
-      resolved.position = new geometry_msgs.msg.PointStamped()
+      resolved.position = new geometry_msgs.msg.PoseStamped()
     }
 
     return resolved;
