@@ -67,7 +67,7 @@ include Turtlebot_packs_part2/kobuki_msgs/CMakeFiles/_kobuki_msgs_generate_messa
 include Turtlebot_packs_part2/kobuki_msgs/CMakeFiles/_kobuki_msgs_generate_messages_check_deps_AutoDockingActionGoal.dir/progress.make
 
 Turtlebot_packs_part2/kobuki_msgs/CMakeFiles/_kobuki_msgs_generate_messages_check_deps_AutoDockingActionGoal:
-	cd /home/jan/Rins/build/Turtlebot_packs_part2/kobuki_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py kobuki_msgs /home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg kobuki_msgs/AutoDockingGoal:actionlib_msgs/GoalID:std_msgs/Header
+	cd /home/jan/Rins/build/Turtlebot_packs_part2/kobuki_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py kobuki_msgs /home/jan/Rins/devel/share/kobuki_msgs/msg/AutoDockingActionGoal.msg std_msgs/Header:kobuki_msgs/AutoDockingGoal:actionlib_msgs/GoalID
 
 _kobuki_msgs_generate_messages_check_deps_AutoDockingActionGoal: Turtlebot_packs_part2/kobuki_msgs/CMakeFiles/_kobuki_msgs_generate_messages_check_deps_AutoDockingActionGoal
 _kobuki_msgs_generate_messages_check_deps_AutoDockingActionGoal: Turtlebot_packs_part2/kobuki_msgs/CMakeFiles/_kobuki_msgs_generate_messages_check_deps_AutoDockingActionGoal.dir/build.make

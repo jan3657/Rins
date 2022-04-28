@@ -1,0 +1,8 @@
+prefix=/home/jan/Rins/devel
+
+Name: turtlebot_arm_gazebo
+Description: Description of turtlebot_arm_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

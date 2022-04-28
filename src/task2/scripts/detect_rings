@@ -11,8 +11,10 @@ from geometry_msgs.msg import PointStamped, Vector3, Pose, PoseStamped
 from cv_bridge import CvBridge, CvBridgeError
 from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
-from std_msgs.msg import String
 from task2.msg import Ring
+import colorsys
+from message_filters import ApproximateTimeSynchronizer, Subscriber
+
 
 class The_Ring:
     def __init__(self):
@@ -27,30 +29,38 @@ class The_Ring:
         # Marker array object used for visualizations
         self.marker_array = MarkerArray()
         self.marker_num = 1
-
+        
         self.rings = list()
 
         # Subscribe to the image and/or depth topic
         #self.image_sub = rospy.Subscriber("/camera/rgb/image_raw", Image, self.image_callback)
-        self.depth_sub = rospy.Subscriber(
-            "/camera/depth/image_raw", Image, self.depth_callback)
+        #self.depth_sub = rospy.Subscriber("/camera/depth/image_raw", Image, self.depth_callback)
+        self.image_sub = Subscriber("/camera/rgb/image_raw", Image)
+        self.depth_sub = Subscriber("/camera/depth/image_raw", Image)
+
+        ats = ApproximateTimeSynchronizer([self.image_sub, self.depth_sub], queue_size=5, slop=0.01)
+        ats.registerCallback(self.depth_callback)
+    
+        # Publiser for the visualization markers
+        self.markers_pub = rospy.Publisher('markers', MarkerArray, queue_size=1000)
 
         # Object we use for transforming between coordinate frames
         self.tf_buf = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
 
-    def get_pose(self, e, dist):
+
+    def get_pose(self,e,dist):
         # Calculate the position of the detected ellipse
 
-        k_f = 525  # kinect focal length in pixels
+        k_f = 525 # kinect focal length in pixels
 
         elipse_x = self.dims[1] / 2 - e[0][0]
         elipse_y = self.dims[0] / 2 - e[0][1]
 
-        angle_to_target = np.arctan2(elipse_x, k_f)
+        angle_to_target = np.arctan2(elipse_x,k_f)
 
         # Get the angles in the base_link relative coordinate system
-        x, y = dist*np.cos(angle_to_target), dist*np.sin(angle_to_target)
+        x,y = dist*np.cos(angle_to_target), dist*np.sin(angle_to_target)
 
         ### Define a stamped message for transformation - directly in "base_frame"
         #point_s = PointStamped()
@@ -72,28 +82,30 @@ class The_Ring:
         point_world = self.tf_buf.transform(point_s, "map")
 
         # Create a Pose object with the same position
-        pose_stamped = PoseStamped()
-        pose_stamped.pose.position.x = point_world.point.x
-        pose_stamped.pose.position.y = point_world.point.y
-        pose_stamped.pose.position.z = point_world.point.z
-        pose_stamped.header.frame_id = "camera_rgb_optical_frame"
-        pose_stamped.header.stamp = rospy.Time(0)
+        pose = PoseStamped()
+        pose.header.frame_id = "camera_rgb_optical_frame"
+        pose.header.stamp = rospy.Time(0)
+        pose.pose.position.x = point_world.point.x
+        pose.pose.position.y = point_world.point.y
+        pose.pose.position.z = point_world.point.z
 
-        return point_world, pose_stamped
+        return pose
+        
 
-    def depth_callback(self, data):
+    def depth_callback(self, image, depth):
         #print('I got a new image!')
 
         try:
-            cv_image = self.bridge.imgmsg_to_cv2(data, "32FC1")
-            depth_16u = self.bridge.imgmsg_to_cv2(data, "16UC1")
+            coloured_img = self.bridge.imgmsg_to_cv2(image, "bgr8")
+            cv_image = self.bridge.imgmsg_to_cv2(depth, "32FC1")
+            depth_16u = self.bridge.imgmsg_to_cv2(depth, "16UC1")
         except CvBridgeError as e:
             print(e)
 
         image_1 = depth_16u / 65536.0 * 255
         image_1 = image_1/np.max(image_1)*255
 
-        image_viz = np.array(image_1, dtype=np.uint8)
+        image_viz = np.array(image_1, dtype= np.uint8)
         # Set the dimensions of the image
         self.dims = image_viz.shape
 
@@ -109,13 +121,12 @@ class The_Ring:
         #thresh = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 25)
 
         # Extract contours
-        contours, hierarchy = cv2.findContours(
-            thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
         # Example how to draw the contours, only for visualization purposes
         cv2.drawContours(image_viz, contours, -1, (255, 0, 0), 3)
-        cv2.imshow("Contour window", image_viz)
-        cv2.waitKey(1)
+        #cv2.imshow("Contour window",image_viz)
+        #cv2.waitKey(1)
 
         # Fit elipses to all extracted contours
         elps = []
@@ -126,17 +137,19 @@ class The_Ring:
                 ellipse = cv2.fitEllipse(cnt)
                 elps.append(ellipse)
 
+
         # Find two elipses with same centers
         candidates = []
         for n in range(len(elps)):
             for m in range(n + 1, len(elps)):
                 e1 = elps[n]
                 e2 = elps[m]
-                dist = np.sqrt(
-                    ((e1[0][0] - e2[0][0]) ** 2 + (e1[0][1] - e2[0][1]) ** 2))
+                dist = np.sqrt(((e1[0][0] - e2[0][0]) ** 2 + (e1[0][1] - e2[0][1]) ** 2))
                 #             print dist
                 if dist < 5:
-                    candidates.append((e1, e2))
+                    candidates.append((e1,e2))
+
+        #print("Processing is done! found", len(candidates), "candidates for rings")
 
         # Extract the depth from the depth image
         for c in candidates:
@@ -145,36 +158,34 @@ class The_Ring:
             e1 = c[0]
             e2 = c[1]
 
+            size = (e1[1][0]+e1[1][1])/2
+            #print("Size: ", size)
+            center = (e1[0][1], e1[0][0])
+            
+            if size > 70:
+                continue
+                
             # drawing the ellipses on the image
             cv2.ellipse(image_viz, e1, (0, 255, 0), 2)
-            cv2.ellipse(image_viz, e2, (0, 255, 0), 2)
-
-            size = (e1[1][0]+e1[1][1])/2
-            center = (e1[0][1], e1[0][0])
+            cv2.ellipse(image_viz, e2, (0, 255, 0), 2)                           
 
             x1 = int(center[0] - size / 2)
             x2 = int(center[0] + size / 2)
-            x_min = x1 if x1 > 0 else 0
-            x_max = x2 if x2 < image_viz.shape[0] else image_viz.shape[0]
+            x_min = x1 if x1>0 else 0
+            x_max = x2 if x2<image_viz.shape[0] else image_viz.shape[0]
 
             y1 = int(center[1] - size / 2)
             y2 = int(center[1] + size / 2)
             y_min = y1 if y1 > 0 else 0
             y_max = y2 if y2 < image_viz.shape[1] else image_viz.shape[1]
 
-            #depth_image = self.bridge.imgmsg_to_cv2(depth_img, "16UC1")
-            #depth_image = self.bridge.imgmsg_to_cv2(depth_img, "32FC1")
+            pose = self.get_pose(e1, float(np.nanmean(cv_image[x_min:x_max,y_min:y_max])))
 
-            #self.get_pose(e1, float(np.mean(depth_image[x_min:x_max,y_min:y_max]))/1000.0)
-            point_world, pose_stamped = self.get_pose(
-                e1, float(np.nanmean(cv_image[x_min:x_max, y_min:y_max])))
-
-
-
-        if len(candidates) > 0:
-            cv2.imshow("Image window", image_viz)
+        #if len(candidates)>0:
+        
+            cv2.imshow("Image window",image_viz)
             cv2.waitKey(1)
-            #Dubi barvu
+            """
             try:
                 coloured_img_msg = rospy.wait_for_message(
                     '/camera/rgb/image_raw', Image)
@@ -182,7 +193,7 @@ class The_Ring:
 
             except CvBridgeError as e:
                 print(e)
-
+            """
             m1 = np.zeros(coloured_img.shape[0:2], np.uint8)
             m2 = np.zeros(coloured_img.shape[0:2], np.uint8)
 
@@ -190,9 +201,57 @@ class The_Ring:
             m2 = cv2.ellipse(m2, e2, (255, 255, 255), -1)
 
             m3 = m2 - m1
+            
+            three_channel = np.zeros_like(coloured_img)
+            three_channel[:,:,0] = m3
+            three_channel[:,:,1] = m3
+            three_channel[:,:,2] = m3
+            
+            result = cv2.bitwise_and(coloured_img, three_channel)
+            #print(np.nonzero(result))
+            #hsv_img = cv2.cvtColor(result, cv2.COLOR_RGB2HSV)
+            average_hsv = cv2.mean(result, mask=m3)[:3]
+            #print(average_hsv)
+            
+            h, s, v = colorsys.rgb_to_hsv(average_hsv[2] / 255, average_hsv[1] / 255, average_hsv[0] / 255)
+            hue = int(h * 360)
+            sat = int(s * 255)
+            val = int(v * 255)
+            
+            color = ""
+            
+            if hue < 15 or hue > 330:
+                color = "red"
+            elif 40 < hue < 70:
+                color = "yellow"
+            elif 90 < hue < 150:
+                color = "green"
+            elif 160 < hue <= 190:
+                color = "cyan"
+            elif 190 < hue < 240:
+                color = "blue"
+            
+            if hue == 0 and sat == 0:
+                color = "black"
+                
+            #print(color)
+            #print(color, hue, sat, val, average_hsv)
+            
+            #print("HSV: ", int(h * 179), int(s * 255), int(v * 255))
+            #h = hsv_img[:, :, 0]
+            
+            #print(np.nonzero(h))
+            
+            cv2.imshow("RGB", coloured_img)
+            cv2.waitKey(1)
+            #cv2.imshow("RGB mask", result)
+            #cv2.waitKey(1)
+            """
+            #cv2.imshow("HSV", hsv_img, bgr)
+            #cv2.waitKey(1)
+            #print("Image shape", m3.shape, coloured_img.shape)
 
             bgr_color = cv2.mean(coloured_img, mask=m3)[:-1]
-
             #RGB to colour name
             rgb_color = bgr_color[::-1]
             min = np.min(rgb_color)
@@ -224,14 +283,14 @@ class The_Ring:
                 colour = "idk"
 
             #publish the ring
-            
+            """
+            #print(pose)
             ringMsg = Ring()
-            ringMsg.position = pose_stamped
-            ringMsg.color = colour
-            #print(type(pose_stamped))
+            ringMsg.position = pose
+            ringMsg.color = color
             ring_publisher = rospy.Publisher('detected_ring', Ring, queue_size=1)
             ring_publisher.publish(ringMsg)
-
+    
 
 def main():
 

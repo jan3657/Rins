@@ -1,1 +1,1 @@
-point_world
+cv2.imshow("Image",coloured_img)

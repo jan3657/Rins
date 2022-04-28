@@ -73,6 +73,9 @@ all: Turtlebot_packs_part2/kobuki_desktop/kobuki_rviz_launchers/all
 all: Turtlebot_packs_part2/kobuki_msgs/all
 all: Turtlebot_packs_part1/tf2/all
 all: Turtlebot_packs_part1/turtlebot/turtlebot/all
+all: exercise7/pincher_arm/turtlebot_arm/all
+all: exercise7/pincher_arm/turtlebot_arm_description/all
+all: exercise7/pincher_arm/turtlebot_arm_gazebo/all
 all: Turtlebot_packs_part1/turtlebot/turtlebot_bringup/all
 all: Turtlebot_packs_part1/turtlebot/turtlebot_capabilities/all
 all: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_dashboard/all
@@ -91,11 +94,13 @@ all: Turtlebot_packs_part2/kobuki/kobuki_bumper2pc/all
 all: exercise3/all
 all: exercise4/all
 all: Turtlebot_packs_part2/kobuki_desktop/kobuki_dashboard/all
+all: exercise7/exercise7/all
 all: task2/all
 all: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/all
 all: Turtlebot_packs_part1/turtlebot_navigation/all
 all: Turtlebot_packs_part1/turtlebot/turtlebot_teleop/all
 all: Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/all
+all: exercise7/pincher_arm/turtlebot_arm_control/all
 all: Turtlebot_packs_part2/kobuki/kobuki_description/all
 all: Turtlebot_packs_part1/turtlebot/turtlebot_description/all
 all: Turtlebot_packs_part2/yujin_ocs/yocs_cmd_vel_mux/all
@@ -133,6 +138,9 @@ preinstall: Turtlebot_packs_part2/kobuki_desktop/kobuki_rviz_launchers/preinstal
 preinstall: Turtlebot_packs_part2/kobuki_msgs/preinstall
 preinstall: Turtlebot_packs_part1/tf2/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot/turtlebot/preinstall
+preinstall: exercise7/pincher_arm/turtlebot_arm/preinstall
+preinstall: exercise7/pincher_arm/turtlebot_arm_description/preinstall
+preinstall: exercise7/pincher_arm/turtlebot_arm_gazebo/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot/turtlebot_bringup/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot/turtlebot_capabilities/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_dashboard/preinstall
@@ -151,11 +159,13 @@ preinstall: Turtlebot_packs_part2/kobuki/kobuki_bumper2pc/preinstall
 preinstall: exercise3/preinstall
 preinstall: exercise4/preinstall
 preinstall: Turtlebot_packs_part2/kobuki_desktop/kobuki_dashboard/preinstall
+preinstall: exercise7/exercise7/preinstall
 preinstall: task2/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot_navigation/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot/turtlebot_teleop/preinstall
 preinstall: Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/preinstall
+preinstall: exercise7/pincher_arm/turtlebot_arm_control/preinstall
 preinstall: Turtlebot_packs_part2/kobuki/kobuki_description/preinstall
 preinstall: Turtlebot_packs_part1/turtlebot/turtlebot_description/preinstall
 preinstall: Turtlebot_packs_part2/yujin_ocs/yocs_cmd_vel_mux/preinstall
@@ -198,6 +208,9 @@ clean: Turtlebot_packs_part2/kobuki_desktop/kobuki_rviz_launchers/clean
 clean: Turtlebot_packs_part2/kobuki_msgs/clean
 clean: Turtlebot_packs_part1/tf2/clean
 clean: Turtlebot_packs_part1/turtlebot/turtlebot/clean
+clean: exercise7/pincher_arm/turtlebot_arm/clean
+clean: exercise7/pincher_arm/turtlebot_arm_description/clean
+clean: exercise7/pincher_arm/turtlebot_arm_gazebo/clean
 clean: Turtlebot_packs_part1/turtlebot/turtlebot_bringup/clean
 clean: Turtlebot_packs_part1/turtlebot/turtlebot_capabilities/clean
 clean: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_dashboard/clean
@@ -216,11 +229,13 @@ clean: Turtlebot_packs_part2/kobuki/kobuki_bumper2pc/clean
 clean: exercise3/clean
 clean: exercise4/clean
 clean: Turtlebot_packs_part2/kobuki_desktop/kobuki_dashboard/clean
+clean: exercise7/exercise7/clean
 clean: task2/clean
 clean: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/clean
 clean: Turtlebot_packs_part1/turtlebot_navigation/clean
 clean: Turtlebot_packs_part1/turtlebot/turtlebot_teleop/clean
 clean: Turtlebot_packs_part2/kobuki_desktop/kobuki_gazebo_plugins/clean
+clean: exercise7/pincher_arm/turtlebot_arm_control/clean
 clean: Turtlebot_packs_part2/kobuki/kobuki_description/clean
 clean: Turtlebot_packs_part1/turtlebot/turtlebot_description/clean
 clean: Turtlebot_packs_part2/yujin_ocs/yocs_cmd_vel_mux/clean
@@ -1561,6 +1576,81 @@ exercise4/clean: exercise4/CMakeFiles/visualization_msgs_generate_messages_lisp.
 exercise4/clean: exercise4/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/clean
 exercise4/clean: exercise4/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
 .PHONY : exercise4/clean
+
+#=============================================================================
+# Directory level rules for directory exercise7/exercise7
+
+# Recursive "all" directory target.
+exercise7/exercise7/all:
+.PHONY : exercise7/exercise7/all
+
+# Recursive "preinstall" directory target.
+exercise7/exercise7/preinstall:
+.PHONY : exercise7/exercise7/preinstall
+
+# Recursive "clean" directory target.
+exercise7/exercise7/clean:
+.PHONY : exercise7/exercise7/clean
+
+#=============================================================================
+# Directory level rules for directory exercise7/pincher_arm/turtlebot_arm
+
+# Recursive "all" directory target.
+exercise7/pincher_arm/turtlebot_arm/all:
+.PHONY : exercise7/pincher_arm/turtlebot_arm/all
+
+# Recursive "preinstall" directory target.
+exercise7/pincher_arm/turtlebot_arm/preinstall:
+.PHONY : exercise7/pincher_arm/turtlebot_arm/preinstall
+
+# Recursive "clean" directory target.
+exercise7/pincher_arm/turtlebot_arm/clean:
+.PHONY : exercise7/pincher_arm/turtlebot_arm/clean
+
+#=============================================================================
+# Directory level rules for directory exercise7/pincher_arm/turtlebot_arm_control
+
+# Recursive "all" directory target.
+exercise7/pincher_arm/turtlebot_arm_control/all:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_control/all
+
+# Recursive "preinstall" directory target.
+exercise7/pincher_arm/turtlebot_arm_control/preinstall:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_control/preinstall
+
+# Recursive "clean" directory target.
+exercise7/pincher_arm/turtlebot_arm_control/clean:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_control/clean
+
+#=============================================================================
+# Directory level rules for directory exercise7/pincher_arm/turtlebot_arm_description
+
+# Recursive "all" directory target.
+exercise7/pincher_arm/turtlebot_arm_description/all:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_description/all
+
+# Recursive "preinstall" directory target.
+exercise7/pincher_arm/turtlebot_arm_description/preinstall:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_description/preinstall
+
+# Recursive "clean" directory target.
+exercise7/pincher_arm/turtlebot_arm_description/clean:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_description/clean
+
+#=============================================================================
+# Directory level rules for directory exercise7/pincher_arm/turtlebot_arm_gazebo
+
+# Recursive "all" directory target.
+exercise7/pincher_arm/turtlebot_arm_gazebo/all:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_gazebo/all
+
+# Recursive "preinstall" directory target.
+exercise7/pincher_arm/turtlebot_arm_gazebo/preinstall:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_gazebo/preinstall
+
+# Recursive "clean" directory target.
+exercise7/pincher_arm/turtlebot_arm_gazebo/clean:
+.PHONY : exercise7/pincher_arm/turtlebot_arm_gazebo/clean
 
 #=============================================================================
 # Directory level rules for directory gtest

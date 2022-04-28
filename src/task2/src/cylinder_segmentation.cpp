@@ -309,9 +309,9 @@ int main(int argc, char **argv)
   pubx = nh.advertise<pcl::PCLPointCloud2>("planes", 1);
   puby = nh.advertise<pcl::PCLPointCloud2>("cylinder", 1);
 
-  //pubm = nh.advertise<visualization_msgs::Marker>("detected_cylinder", 1);
+  pubm = nh.advertise<visualization_msgs::Marker>("detected_cylinder", 1);
 
-  cylinder_publisher = nh.advertise<task2::Cylinder>("detected_cylinder", 1);
+  cylinder_publisher = nh.advertise<task2::Cylinder>("detected_cylinder_colour", 1);
 
   // Spin
   ros::spin();
