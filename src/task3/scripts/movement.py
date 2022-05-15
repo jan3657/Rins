@@ -141,7 +141,32 @@ class Movement:
                 self.state = "get_next_waypoint"       
                 
             rate.sleep()
-        
+    
+    
+    def find_rings_callback(self, data):
+
+        place_marker = True
+
+        if self.rings:
+            for ring in self.rings:
+                if (np.sqrt((data.position.pose.position.x - ring.pose.pose.position.x) ** 2 + (
+                        data.position.pose.position.y - ring.pose.pose.position.y) ** 2) < 1):
+                    place_marker = False
+
+        if place_marker and len(self.rings) < self.number_of_rings:
+            pose = data.position
+            color = data.color
+            ring = Ringy(pose, self.ring_marker_num, color)
+            self.ring_marker_num += 1
+            self.rings.append(ring)
+            self.ring_marker_array.markers.append(ring.to_marker())
+            self.objectLocationX = data.position.pose.position.x
+            self.objectLocationY = data.position.pose.position.y
+            print("Hello", color, "ring")
+            self.state = "ring_found"
+
+        self.ring_markers_pub.publish(self.ring_marker_array)
+    
     
     def find_cylinders_callback(self, data):
         
