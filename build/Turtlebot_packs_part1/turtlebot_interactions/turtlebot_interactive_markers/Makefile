@@ -172,6 +172,76 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_cpp: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_cpp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+.PHONY : Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_eus: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+.PHONY : visualization_msgs_generate_messages_eus
+
+# fast build rule for target.
+visualization_msgs_generate_messages_eus/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
+.PHONY : visualization_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_nodejs: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : visualization_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+visualization_msgs_generate_messages_nodejs/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+.PHONY : visualization_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_py: Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : visualization_msgs_generate_messages_py
+
+# fast build rule for target.
+visualization_msgs_generate_messages_py/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule:
 	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
 .PHONY : Turtlebot_packs_part1/turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
@@ -222,6 +292,11 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... visualization_msgs_generate_messages_eus"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_nodejs"
+	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... turtlebot_marker_server"
 	@echo "... src/turtlebot_marker_server.o"
 	@echo "... src/turtlebot_marker_server.i"

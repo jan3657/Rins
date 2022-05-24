@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="task3" type="cylinder_segmentation" name="cylinder_segmentation">
+    </node>
+    <node pkg="task3" type="detect_rings" name="detect_rings">
+    </node>
+    <node pkg="task3" type="move_arm.py" name="move_arm">
+    </node>
+
+
+</launch>

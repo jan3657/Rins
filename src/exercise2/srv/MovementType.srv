@@ -1,5 +1,0 @@
-string shape
-int32 duration
----
-string lastDrawnShape
-

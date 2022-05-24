@@ -17,6 +17,7 @@ from matplotlib import pyplot as plt
 
 from os.path import dirname, join
 
+from std_msgs.msg import String
 from geometry_msgs.msg import PoseStamped, Quaternion, Point, PoseWithCovarianceStamped
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionResult
 from sensor_msgs.msg import Image
@@ -80,11 +81,9 @@ class Movement:
         self.fine_navigation_img_pub = rospy.Publisher(
             "/fine_navigation_image", Image, queue_size=10
         )
-
-        """  
-        
-        """
-
+        self.arm_control_pub = rospy.Publisher(
+            "/arm_command", String, queue_size=10
+            )
         self.tf_buf = tf2_ros.Buffer()
         self.tf2_listener = tf2_ros.TransformListener(self.tf_buf)
            
@@ -173,7 +172,6 @@ class Movement:
             elif self.state == "end":
                 for r in self.cylinders:
                     if(r.color == "red"):
-                        print("I'm here")
                         self.state = "move_to_remembered_point"
                         self.cylinder_color = "red"
                         self.move_to(1,1,r.robot_pose)
@@ -433,8 +431,8 @@ class Movement:
                         else:
                             self.arm_control_pub.publish("extend")
                             print(f"Extending arm over the {color.upper()} cylinder")
-                            self.speak(f"Im near the {color} cylinder.")
                             rospy.sleep(5)
+                            print("Arm fully extended")
                             self.arm_control_pub.publish("retract")
                             self.goal_reached = True
                             self.back_counter = 2
@@ -465,6 +463,7 @@ class Movement:
             self.bridge.cv2_to_imgmsg(cv2.bitwise_and(image, image, mask=cv2.bitwise_not(mask)))
         )
         print()
+
     def amcl_callback(self,data):
         self.robot_pose = data.pose.pose
 
@@ -506,6 +505,7 @@ class Ringy:
         marker.color = ColorRGBA(self.rgba[0],self.rgba[1],self.rgba[2],self.rgba[3])
         marker.id = self.id
         return marker
+
 class Cylindy:
 
     def __init__(self, pose, cId, color,robot_pose):

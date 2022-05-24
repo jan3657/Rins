@@ -241,6 +241,146 @@ std_srvs_generate_messages_py/fast:
 	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/std_srvs_generate_messages_py.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/std_srvs_generate_messages_py.dir/build
 .PHONY : std_srvs_generate_messages_py/fast
 
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_eus.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_py.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/jan/Rins/build && $(MAKE) $(MAKESILENT) -f Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make Turtlebot_packs_part2/kobuki/kobuki_keyop/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -254,6 +394,16 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_lisp"
